@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Draggable Dual-View Slideshow</title>
+		<meta name="description" content="Draggable Dual-View Slideshow: A Slideshow with two views and content area" />
+		<meta name="keywords" content="draggable, slideshow, fullscreen, carousel, views, zoomed, 3d transform, perspective, dragdealer" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link href='http://fonts.googleapis.com/css?family=Playfair+Display:900,400|Lato:300,400,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/dragdealer.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+  		<script src="js/modernizr.custom.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="codrops-top clearfix">
+				<span class="right"><a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=19332"><span>Project Details</span></a></span>
+			</div>
+			<header id="header" class="codrops-header">
+				<h1>IA369 Project</h1>
+				<span class="message">This mobile version does not have the slideshow switch</span>
+				<button class="slider-switch">Switch view</button>
+			</header>
+			<div id="overlay" class="overlay">
+				<div class="info">
+					<h2>Demo interactions</h2>
+					<span class="info-drag">Drag Sliders</span>
+					<span class="info-keys">Use Arrows</span>
+					<span class="info-switch">Switch view</span>
+					<button>Got it!</button>	
+				</div>
+			</div>
+			<div id="slideshow" class="dragslider">
+				<section class="img-dragger img-dragger-large dragdealer">
+					<div class="handle">
+						<div class="slide" data-content="content-1">
+							<div class="img-wrap"><img src="img/concept.jpg" alt="img1"/></div>
+							<h2>Concepts<span>Theory and principles behind brain scanning</span></h2>
+							<button class="content-switch">Read more</button>
+						</div>
+						<div class="slide" data-content="content-2">
+							<div class="img-wrap"><img src="img/dicom.png" alt="img2"/></div>
+							<h2>RAW Data: DWI <span>How to represent Medical Image Data </span></h2>
+							<button class="content-switch">Read more</button>
+						</div>
+						<div class="slide" data-content="content-3">
+							<div class="img-wrap"><img src="img/dti.jpg" alt="img3"/></div>
+							<h2>Conversion: DTI to DWI <span> How to obtain diffusion characteristics</span></h2>
+							<button class="content-switch">Read more</button>
+						</div>
+						<div class="slide" data-content="content-4">
+							<div class="img-wrap"><img src="img/fa.png" alt="img4"/></div>
+							<h2>Scalar<span>Representing Data in a Better Way</span></h2>
+							<button class="content-switch">Read more</button>
+						</div>
+						<div class="slide" data-content="content-5">
+							<div class="img-wrap"><img src="img/colormap.png" alt="img5"/></div>
+							<h2> Colormaps <span>What are they and what's the utility?</span></h2>
+							<button class="content-switch">Read more</button>
+						</div>
+						<div class="slide" data-content="content-6">
+							<div class="img-wrap"><img src="img/glifos.png" alt="img6"/></div>
+							<h2>Glyphs <span>Visualizing Tensors in a Straightfoward Way </span></h2>
+							<button class="content-switch">Read more</button>
+						</div>
+						<div class="slide" data-content="content-7">
+							<div class="img-wrap"><img src="img/tratos2.png" alt="img7"/></div>
+							<h2>Tractography <span>Visualizing Brain Fibers, a medical revolution</span></h2>
+							<button class="content-switch">Read more</button>
+						</div>
+					</div>
+				</section><!-- /img-dragger-->
+				<!-- Content section -->
+				<section class="pages">
+					<div class="content" data-content="content-1">
+						<h2>Concepts <span>Theory and principles behind brain scanning</span></h2>
+						<p> The main idea ...
+						
+						<p class="related">
+							Further references <a href="https://en.wikipedia.org/wiki/Diffusion_MRI">[1] Website</a>
+<a href="Concepts and Theory ... ">[2] Article</a>
+<a href="On theory and principles ...">[3] Book</a>
+						</p>
+					</div>
+					<div class="content" data-content="content-2">
+						<h2>RAW Data <span>How to access Medical Images</span></h2>
+						<p>Medical Images are ...</p>
+						<p class="related">
+					Further references 
+<a href="https://en.wikipedia.org/wiki/Diffusion_MRI">[1] Website</a>
+<a href="Concepts and Theory ... ">[2] Article</a>
+<a href="On theory and principles ...">[3] Book</a>
+						</p>
+					</div>
+					<div class="content" data-content="content-3">
+						<h2>Conversion DTI to DWI <span>How to obtain diffusion characteristics</span></h2>
+						<p>Converting simple DWI images to ...</p>
+						
+						<p class="related">
+					Further references 
+<a href="https://en.wikipedia.org/wiki/Diffusion_MRI">[1] Website</a>
+<a href="Concepts and Theory ... ">[2] Article</a>
+<a href="On theory and principles ...">[3] Book</a>
+						</p>
+					</div>
+					<div class="content" data-content="content-4">
+						<h2>Scalar <span>Representing Data in a Better Way</span></h2>
+						
+						<p class="related">
+					Further references 
+<a href="https://en.wikipedia.org/wiki/Diffusion_MRI">[1] Website</a>
+<a href="Concepts and Theory ... ">[2] Article</a>
+<a href="On theory and principles ...">[3] Book</a>
+						</p>
+					</div>
+					<div class="content" data-content="content-5">
+						<h2>Colormaps <span>What are they and what's the utility?</span></h2>
+						
+												<p class="related">
+					Further references 
+<a href="https://en.wikipedia.org/wiki/Diffusion_MRI">[1] Website</a>
+<a href="Concepts and Theory ... ">[2] Article</a>
+<a href="On theory and principles ...">[3] Book</a>
+						</p>
+					</div>
+					<div class="content" data-content="content-6">
+						<h2>Glyphs<span>Visualizing Tensors in a Straightfoward Way</span></h2>
+						
+												<p class="related">
+					Further references 
+<a href="https://en.wikipedia.org/wiki/Diffusion_MRI">[1] Website</a>
+<a href="Concepts and Theory ... ">[2] Article</a>
+<a href="On theory and principles ...">[3] Book</a>
+						</p>
+					</div>
+					<div class="content" data-content="content-7">
+						<h2>Tractography <span>Visualizing Brain Fibers</span></h2>
+					
+												<p class="related">
+					Further references 
+<a href="https://en.wikipedia.org/wiki/Diffusion_MRI">[1] Website</a>
+<a href="Concepts and Theory ... ">[2] Article</a>
+<a href="On theory and principles ...">[3] Book</a>
+						</p>
+					</div>
+					
+				</section>
+			</div>
+		</div><!-- /container --> 
+		<script src="js/dragdealer.js"></script>
+		<script src="js/classie.js"></script>
+		<script src="js/dragslideshow.js"></script>
+		<script>
+			(function() {
+
+				var overlay = document.getElementById( 'overlay' ),
+					overlayClose = overlay.querySelector( 'button' ),
+					header = document.getElementById( 'header' )
+					switchBtnn = header.querySelector( 'button.slider-switch' ),
+					toggleBtnn = function() {
+						if( slideshow.isFullscreen ) {
+							classie.add( switchBtnn, 'view-maxi' );
+						}
+						else {
+							classie.remove( switchBtnn, 'view-maxi' );
+						}
+					},
+					toggleCtrls = function() {
+						if( !slideshow.isContent ) {
+							classie.add( header, 'hide' );
+						}
+					},
+					toggleCompleteCtrls = function() {
+						if( !slideshow.isContent ) {
+							classie.remove( header, 'hide' );
+						}
+					},
+					slideshow = new DragSlideshow( document.getElementById( 'slideshow' ), { 
+						// toggle between fullscreen and minimized slideshow
+						onToggle : toggleBtnn,
+						// toggle the main image and the content view
+						onToggleContent : toggleCtrls,
+						// toggle the main image and the content view (triggered after the animation ends)
+						onToggleContentComplete : toggleCompleteCtrls
+					}),
+					toggleSlideshow = function() {
+						slideshow.toggle();
+						toggleBtnn();
+					},
+					closeOverlay = function() {
+						classie.add( overlay, 'hide' );
+					};
+
+				// toggle between fullscreen and small slideshow
+				switchBtnn.addEventListener( 'click', toggleSlideshow );
+				// close overlay
+				overlayClose.addEventListener( 'click', closeOverlay );
+
+			}());
+		</script>
+	</body>
+</html>
