@@ -1,18 +1,17 @@
-Draggable Dual-View Slideshow
+Visualization Project to Explain DTI Techniques
 =========
 
-A draggable slideshow with two views: fullscreen and small carousel. In fullscreen view, a related content area can be viewed.
+This project consist of a Website developed to assist new researchers in understanding DTI theory and application in a highly visual manner.
 
-[Article on Codrops](http://tympanus.net/codrops/?p=19332)
+The intended target group is anyone with a basic knowledge on calculus and linear algebra looking to understand the processes behind acquisition, transformation and visualization of Diffusion Tensor Images. 
 
-[Demo](http://tympanus.net/Development/DraggableDualViewSlideshow/)
+This project was originated as a graduation course final project on State University of Campinas (UNICAMP) at 1st semester of 2017 on the discipline of Data Visualization. 
 
-Integrate or build upon it for free in your personal or commercial projects. Don't republish, redistribute or sell "as-is". 
 
-Read more here: [License](http://tympanus.net/codrops/licensing/)
+This website is developed under the template available on
+[Template](http://tympanus.net/Development/DraggableDualViewSlideshow/)
 
-[Dragdealer.js 0.9.7](http://github.com/skidding/dragdealer) by Ovidiu Cherecheș
-
-Images by [Unsplash](http://unsplash.com)
+More on the license is available here:
+[License](http://tympanus.net/codrops/licensing/)
 
 [© Codrops 2014](http://www.codrops.com)
