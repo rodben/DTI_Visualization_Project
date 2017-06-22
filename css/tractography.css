@@ -1,0 +1,5 @@
+#3d_tractography_container{
+	display: inline-flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+}
