@@ -1,5 +1,8 @@
 window.onload = function() {
     
+	var colormap = new Colormap();
+    colormap.create();
+	
     var superquadric = new Superquadric();
     superquadric.create();
     
