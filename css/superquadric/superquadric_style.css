@@ -1,0 +1,44 @@
+/* ================================================== glyphs style ==================================================*/
+
+#my_glyphs_img div {
+    display: flex;
+    flex-flow: row wrap;
+    width: 70%;
+    margin: auto;
+}
+
+#my_glyphs_img figure {
+    flex: 1;
+    margin: 2px;
+}
+#my_glyphs_img img {
+    width: 100%;
+    min-width: 150px;
+}
+
+#my_glyphs_img figcaption {
+    text-align: center;
+}
+
+#my_glyphs_img > figcaption {
+    font-weight: bold;
+}
+
+
+
+#superquadric_webgl {
+    display:flex;
+    justify-content:center;
+}
+
+#div_webgl_canvas {
+    width: 30%;
+}
+
+#div_webgl_sliders {
+    width: 25%;
+}
+
+#div_webgl_sliders > div {
+    text-align: left;
+}
