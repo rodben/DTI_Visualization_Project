@@ -14,18 +14,15 @@
 		<link rel="stylesheet" type="text/css" href="css/demo.css" />
 		<link rel="stylesheet" type="text/css" href="css/dragdealer.css" />
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
-		<!-- Tractography css files -->
-		<link rel="stylesheet" type="text/css" href="css/tractography.css" />
 
   		<script type="text/javascript" src="js/modernizr.custom.js"></script>
-			<script type="text/javascript" src="js/three.js"></script>
+<!--			<script type="text/javascript" src="js/three.js"></script>-->
 			<script type="text/javascript" src="js/DragControls.js"></script>
 			<script type="text/javascript" src="js/TrackballControls.js"></script>
 			<!-- XTK Visualization toolkit js files-->			
 			<script type="text/javascript" src="js/xtk_edge.js"></script>
       <script type="text/javascript" src="js/xtk_xdat.gui.js"></script>
-			<!-- Tractography render script -->			
-			<script type="text/javascript" src="js/tractography_3d.js"></script>
+
 			
 
 			<script src="js/main_script.js"></script>
@@ -116,6 +113,34 @@
 					<div class="content" data-content="content-3">
 						<h2>Conversion DTI to DWI <span>How to obtain diffusion characteristics</span></h2>
 						<p>Converting simple DWI images to ...</p>
+						
+						<script type="text/javascript" src="js/script_rod.js"></script>
+						<link rel="stylesheet" type="text/css" href="css/style.css"/>
+
+						<div id="renderer_volume_container" style="width: 70%; height: 400px;">
+
+<!--							<div id="3d" style="width: 49%; height: 49%; display: inline-block; float: left; border-right: 1px solid white;"></div>-->
+ 							<div style="width: 30%; height: 100%;">
+                  <div style="top: 0px; left: 0px;"> 3D View </div>
+                  <div id="3d" style="width: 100%; height: 95%; max-height: 95%;"> </div>
+              </div>
+
+						 <div style="width: 30%; height: 100%;">
+   	          <div style="top: 0px; left: 0px;"> Axial View </div>
+              <div id="sliceX" style="width: 100%; height: 95%; max-height: 95%;"> </div>
+            </div>
+
+              <div style="width: 30%; height: 100%;">
+        	      <div style="top: 0px; left: 0px;"> Coronal View </div>
+                <div id="sliceY" style="width: 100%; height: 95%; max-height: 95%;"> </div>
+              </div>
+
+             <div style="width: 30%; height: 100%;">
+   	          <div style="top: 0px; left: 0px;"> Axial View </div>
+              <div id="sliceZ" style="width: 100%; height: 95%; max-height: 95%;"> </div>
+            </div>
+
+						</div>
 
 						<p class="related">
 					Further references
@@ -284,16 +309,34 @@
 					</div>
 					<div class="content" data-content="content-7">
 						<h2>Tractography <span>Visualizing Brain Fibers</span></h2>
-						<p>Tractography is a visual representations of brain ehite matter fiber anatomy, as such, is extremaly valuable for the planning and evaluation of neurosurgeries</p>
-						<div id='3d_tractography_container'> 
-							<div id="3d_tractography_visual" style="width: 70%; height: 50%;"></div>
-						</div>
-						<p class="related">
-					Further references
-<a href="https://en.wikipedia.org/wiki/Diffusion_MRI">[1] Website</a>
-<a href="Concepts and Theory ... ">[2] Article</a>
-<a href="On theory and principles ...">[3] Book</a>
-						</p>
+		
+							<p>
+									Tractography is a visual representations of brain white matter fiber anatomy, as such, explore the next visualization to observe some neural connections.
+							</p>
+						
+							<!-- Tractography render script -->			
+							<script type="text/javascript" src="js/tractography_3d.js"></script>
+							<!-- Tractography css files -->
+							<link rel="stylesheet" type="text/css" href="css/tractography.css" />
+		
+							<div id='threeD_tractography_container'> 
+								<div id="threeD_tractography_visual" style="width: 60%; height: 800px; max-height: 770px;"></div>
+							</div>
+
+							<p>
+									Estimating those fibers is the final result of a great many number of transformations, as explained in the previous sections, which cumulated
+									in a mathematical representation of the majority of fibers in a human brain.  
+							</p>
+
+						
+							<p class="related">
+		
+								Further references
+								<a href="https://en.wikipedia.org/wiki/Diffusion_MRI">[1] Website</a>
+								<a href="Concepts and Theory ... ">[2] Article</a>
+								<a href="On theory and principles ...">[3] Book</a>
+							
+							</p>
 					</div>
 
 				</section>
