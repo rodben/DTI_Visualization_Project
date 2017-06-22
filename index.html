@@ -19,6 +19,7 @@
 			<script type="text/javascript" src="js/DragControls.js"></script>
 			<script type="text/javascript" src="js/TrackballControls.js"></script>
 
+			<script src="js/main_script.js"></script>
 	</head>
 	<body>
 		<div class="container">
@@ -136,12 +137,140 @@
 					</div>
 					<div class="content" data-content="content-6">
 						<h2>Glyphs<span>Visualizing Tensors in a Straightfoward Way</span></h2>
+						
+						<p>
+                            The tensor glyphs are graphic objects that describe the eigenvalues and eigenvectors of a tensor [1]
+                            through their geometric (for example, shape) and graphical (for example, color) properties. The properties of a tensor 
+                            can be more easily analyzed by linking them to the domain proposed by Westin et al. [2] that encompasses
+                            all the geometric forms that a glyph can take [3].
+                        </p>
+                        
+                        <p>
+                            The eigenvalues tell us the diffusivity in the direction of their respective eigenvectors. According to their relations,
+                            the diffusion type can be divided into three basic classes: linear (&lambda;<sub>1</sub> >> &lambda;<sub>2</sub> ≈ &lambda;<sub>3</sub>),
+                            planar (&lambda;<sub>1</sub> ≈ &lambda;<sub>2</sub> >> &lambda;<sub>3</sub>), and spherical
+                            (&lambda;<sub>1</sub> ≈ &lambda;<sub>2</sub> ≈ &lambda;<sub>3</sub>) [2]. Westin et al. Also show 
+                            that to expand the tensor using these three cases as a
+                            base, one can write (&lambda;<sub>1</sub> - &lambda;<sub>2</sub>), (&lambda;<sub>2</sub> – &lambda;<sub>3</sub>) and
+                            &lambda;<sub>3</sub> as the coordinates of this new base and achieve a significant geometric
+                            interpretation for the diffusion tensor. When normalizing these coordinates with respect to the sum of the eigenvalues 
+                            and rearranging the normalized coordinates such that they are in the interval [0, 1] and that the sum of them is 1, we obtain
+                        </p>
+                        
+                        <figure id="my_glyphs_img">
+                            <div>
+                                <figure>
+                                    <img src="img/superquadric/planar.png" />
+                                    <figcaption> Planar </figcaption>
+                                </figure>
+                                <figure>
+                                    <img src="img/superquadric/linear.png" />
+                                    <figcaption> Linear </figcaption>
+                                </figure>
+                                <figure>
+                                    <img src="img/superquadric/esferico.png" />
+                                    <figcaption> Spherical </figcaption>
+                                </figure>
+                            </div>
+                            <figcaption> Glyph classes. </figcaption>
+                        </figure>
+                        
+                        <p>
+                            which define a barycentric parametrization of a triangular domain with the linear, planar and spherical cases at the ends,
+                            as shown in Figure below. Through this triangular domain, we can obtain all the different forms that a glyph can assume based
+                            on eigenvalues.
+                        </p>
+                        
+                        <p>
+                            Nowaday, the main glyphs used are cuboid, cylinder, ellipsoid and superquadric. Cuboids, shown in Figure (a), can express
+                            through the orientation of their faces and their size, respectively, the directions of diffusion and diffusivity. The
+                            disadvantage of cuboids is their flat faces that make it difficult to perceive their 3D geometry in a 2D plane, which can
+                            lead to misinterpretation [1]. Cylinders, shown in Figure (b), express the main direction of diffusion
+                            through its axis. Its disadvantage is the sudden rotation of 90 degrees in its shape, causing discontinuities in the
+                            visualization [4]. Ellipsoids, shown in Figure (c), are the most commonly used tensor glyphs and represent the 
+                            main direction of diffusion through their orientation. They have a rotational symmetry that avoids incorrect interpretation
+                            of the orientation [1], but some of its different forms may have similar appearance from a certain
+                            point of view [3].
+                        </p>
+                        
+                        <br/>
+                        <figure id="my_glyphs_img">
+                            <div>
+                                <figure>
+                                    <img src="img/superquadric/cuboids.png" />
+                                    <figcaption> (a)Cuboid </figcaption>
+                                </figure>
+                                <figure>
+                                    <img src="img/superquadric/cylinder.png" />
+                                    <figcaption> (b)Cylinder </figcaption>
+                                </figure>
+                                <figure>
+                                    <img src="img/superquadric/ellipsoids.png" />
+                                    <figcaption> (c)Ellipsoid </figcaption>
+                                </figure>
+                                <figure>
+                                    <img src="img/superquadric/superquadrics.png" />
+                                    <figcaption> (d)Superquadric </figcaption>
+                                </figure>
+                            </div>
+                            <figcaption> Glifos de tensor. </figcaption>
+                        </figure>
+                        
+                        <p>
+                            In order to overcome the disadvantages raised by the proposed glyphs, Kindlmann presented the superquadric glyphs for
+                            diffusion tensors with the use of superquadric functions [3]. In these new glyphs, he was able to combine
+                            the positive characteristics of cuboid, cylindrical, and ellipsoid glyphs. Figure (d) illustrates the superquadric glyphs.
+                        </p>
+                        
+                        <div id="superquadric_webgl">
 
-												<p class="related">
-					Further references
-<a href="https://en.wikipedia.org/wiki/Diffusion_MRI">[1] Website</a>
-<a href="Concepts and Theory ... ">[2] Article</a>
-<a href="On theory and principles ...">[3] Book</a>
+                            <div id="div_webgl_sliders">
+                                <div>
+                                    <br/>
+                                    &lambda;<sub>1</sub>: <input id="eigenvalue_01" type ="range" step ="0.01" max="1.0" min ="0.0" />
+
+                                    <br/>
+                                    &lambda;<sub>2</sub>: <input id="eigenvalue_02" type ="range" step ="0.01" max="1.0" min ="0.0" />
+
+                                    <br/>
+                                    &lambda;<sub>3</sub>: <input id="eigenvalue_03" type ="range" step ="0.01" max="1.0" min ="0.0" />
+                                </div>
+                                
+                                <br/>
+                                <div>
+                                    C<sub>l</sub>: <span id="span_linear"> </span>
+
+                                    <br/>
+                                    C<sub>p</sub>: <span id="span_planar"> </span>
+
+                                    <br/>
+                                    C<sub>s</sub>: <span id="span_spherical"> </span>
+                                </div>
+                            </div>
+                            
+                             <div id="div_webgl_canvas">
+                                <canvas id="webgl" width="400" height="400">
+                                    Please use a browser that supports "canvas"
+                                </canvas>
+                            </div>
+                           
+                            <link rel="stylesheet" type="text/css" href="css/superquadric/superquadric_style.css" />
+                            <script src="js/superquadric/superquadric.js"></script>
+                        </div>
+                        
+                        <p>
+                            One problem that the glyphs have is that they expose the individual characteristics of diffusivity of the tensors of the
+                            samples. They do not give the overall notion of continuity that deals have. Tractography is a response to this deficiency.
+                            Although this work proposes to develop a system of visualization of diffusivity tensors by colored glyphs, we will, by
+                            completeness, make a brief presentation of tractography.
+                        </p>
+                        
+                        <p class="related">
+                            Further references 
+                            <a href="https://dx.doi.org/10.1007/3-540-31272-2_7" target="_blank">[1] VILANOVA et al., 2006</a>
+                            <a href="http://lmi.bwh.harvard.edu/papers/papers/westinISMRM97.html" target="_blank">[2] WESTIN et al., 1997</a>
+                            <a href="https://dx.doi.org/10.2312/VisSym/VisSym04/147-154" target="_blank">[3] KINDLMANN, 2004</a>
+                            <a href="https://www.crcpress.com/Data-Visualization-Principles-and-Practice-Second-Edition/Telea/p/book/9781466585263" target="_blank">[4] TELEA, 2014</a>
 						</p>
 					</div>
 					<div class="content" data-content="content-7">
