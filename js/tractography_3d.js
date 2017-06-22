@@ -19,7 +19,7 @@ window.onload = function() {
 		  // create a new X.fibers
   	var fibers = new X.fibers();
   	// .. associate the TrackVis .TRK file
-  	fibers.file = 'volumes/cctracks.trk';
+  	fibers.file = 'volumes/dti.trk';
   	fibers.caption = 'The Corpus Callosum:<br>connecting the two hemispheres<br>of the human brain.';
   
   	// .. add the fibers
