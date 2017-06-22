@@ -18,6 +18,9 @@
 			<script type="text/javascript" src="js/three.js"></script>
 			<script type="text/javascript" src="js/DragControls.js"></script>
 			<script type="text/javascript" src="js/TrackballControls.js"></script>
+			<!-- XTK Visualization toolkit js files-->			
+			<script type="text/javascript" src="js/xtk_edge.js"></script>
+      <script type="text/javascript" src="js/xtk_xdat.gui.js"></script>
 
 			<script src="js/main_script.js"></script>
 	</head>
@@ -279,8 +282,11 @@
 					</div>
 					<div class="content" data-content="content-7">
 						<h2>Tractography <span>Visualizing Brain Fibers</span></h2>
-
-												<p class="related">
+						<p>Tractography is a visual representations of brain ehite matter fiber anatomy, as such, is extremaly valuable for the planning and evaluation of neurosurgeries</p>
+						<div id='3d_tractography_container'> 
+							<div id="3d_tractography_visual" style="width: 50%; height: 50%;"></div>
+						</div>
+						<p class="related">
 					Further references
 <a href="https://en.wikipedia.org/wiki/Diffusion_MRI">[1] Website</a>
 <a href="Concepts and Theory ... ">[2] Article</a>
