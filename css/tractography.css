@@ -1,5 +1,24 @@
-#3d_tractography_container{
-	display: inline-flex;
-	flex-flow: row wrap;
-	justify-content: space-around;
+
+#threeD_tractography_container {
+    display: inline-flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    
+    margin: 0 auto;
+    padding: 0;
+    height: 100%;
+    font-family: "Arial";
+    color: #fff;
 }
+
+#threeD_tractography_container canvas {
+    max-width: 100%;
+    max-height: 90%;
+}
+
+#threeD_tractography_visual {
+    background-color: #000;
+		margin: 0 auto;
+}
+
+
