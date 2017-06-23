@@ -4,23 +4,25 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Draggable Dual-View Slideshow</title>
-		<meta name="description" content="Draggable Dual-View Slideshow: A Slideshow with two views and content area" />
-		<meta name="keywords" content="draggable, slideshow, fullscreen, carousel, views, zoomed, 3d transform, perspective, dragdealer" />
-		<meta name="author" content="Codrops" />
+		<title>DTI Visualizaton Project</title>
+		<meta name="description" content="A Website to explain DTI techniques and derivatives visualizations" />
+		<meta name="keywords" content="DTI, DWI, Scientific Visualization, Tractography, Glyphs, Diffusion, Data Visualization" />
 		<link rel="shortcut icon" href="../favicon.ico">
 		<link href='http://fonts.googleapis.com/css?family=Playfair+Display:900,400|Lato:300,400,700' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 		<link rel="stylesheet" type="text/css" href="css/demo.css" />
 		<link rel="stylesheet" type="text/css" href="css/dragdealer.css" />
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
+
   		<script type="text/javascript" src="js/modernizr.custom.js"></script>
-			<script type="text/javascript" src="js/three.js"></script>
+<!--			<script type="text/javascript" src="js/three.js"></script>-->
 			<script type="text/javascript" src="js/DragControls.js"></script>
 			<script type="text/javascript" src="js/TrackballControls.js"></script>
 			<!-- XTK Visualization toolkit js files-->			
 			<script type="text/javascript" src="js/xtk_edge.js"></script>
       <script type="text/javascript" src="js/xtk_xdat.gui.js"></script>
+
+			
 
 			<script src="js/main_script.js"></script>
 	</head>
@@ -58,12 +60,12 @@
 						</div>
 						<div class="slide" data-content="content-3">
 							<div class="img-wrap"><img src="img/dti.jpg" alt="img3"/></div>
-							<h2>Conversion: DTI to DWI <span> How to obtain diffusion characteristics</span></h2>
+							<h2>Conversion: DWI to DTI <span> How to obtain diffusion characteristics</span></h2>
 							<button class="content-switch">Read more</button>
 						</div>
 						<div class="slide" data-content="content-4">
 							<div class="img-wrap"><img src="img/fa.png" alt="img4"/></div>
-							<h2>Scalar<span>Representing Data in a Better Way</span></h2>
+							<h2>Scalar Indexes<span>Representing Data in a Visual Manner</span></h2>
 							<button class="content-switch">Read more</button>
 						</div>
 						<div class="slide" data-content="content-5">
@@ -89,7 +91,7 @@
 						<h2>Concepts <span>Theory and principles behind brain scanning</span></h2>
 						<p> The main idea ...</p>
 
-							<canvas id="ellipse_placement" width="400" height="400" style="border: none"></canvas>
+							<canvas id="ellipse_placement" width="900" height="400" style="border: none"></canvas>
 							<script type="text/javascript" src="js/ellipse.js"></script>
 						<p class="related">
 							Further references <a href="https://en.wikipedia.org/wiki/Diffusion_MRI">[1] Website</a>
@@ -132,8 +134,43 @@
                             </div>
                         </figure>
 
+			<select id="gradients_sel">
+				<option value="0">Gradient 0 (b0)</option>
+				<option value="1">Gradient 1</option>
+				<option value="15">Gradient 15</option>
+				<option value="33">Gradient 33</option>
+			</select>
+                        
+			<script type="text/javascript" src="js/script_grad.js"></script>
+
+                        <div id="renderer_volume_container" style="width: 70%; height: 400px;">
+			<!-- <div id="renderer_volume_container" style="width: 50%; height: 200px;"> -->
+
+                            <div id='loading'>
+                                <h1 class='onair'>Loading data...</h1> 
+                                <div class="loader-bg boxair"></div>
+                            </div>
+
+                            <div style="width: 30%; height: 100%;">
+                                <div style="top: 0px; left: 0px;"> Sagittal View </div>
+                                <div id="sliceX_grad" style="width: 100%; height: 95%; max-height: 95%;"> </div>
+				<!-- <div id="sliceX_grad" style="width: 80%; height: 65%; max-height: 65%;"> </div> -->
+                            </div>
+
+                            <div style="width: 30%; height: 100%;">
+                                <div style="top: 0px; left: 0px;"> Coronal View </div>
+                                <div id="sliceY_grad" style="width: 100%; height: 95%; max-height: 95%;"> </div>
+                            </div>
+
+                            <div style="width: 30%; height: 100%;">
+                                <div style="top: 0px; left: 0px;"> Axial View </div>
+                                <div id="sliceZ_grad" style="width: 100%; height: 95%; max-height: 95%;"> </div>
+                            </div>
+
+                        </div>
+
 						<p class="related">
-                            Further references ~\citep{Huisman2003}
+                            Further references
                             <a href="https://www.ncbi.nlm.nih.gov/pubmed/12595101" target="_blank">[1] BAMMER, 2003</a>
                             <a href="https://www.ncbi.nlm.nih.gov/pubmed/14534804" target="_blank">[2] HUISMAN, 2003</a>
 						</p>
@@ -141,6 +178,34 @@
 					<div class="content" data-content="content-3">
 						<h2>Conversion DTI to DWI <span>How to obtain diffusion characteristics</span></h2>
 						<p>Converting simple DWI images to ...</p>
+						
+<!--						<script type="text/javascript" src="js/script_rod.js"></script>-->
+<!--						<link rel="stylesheet" type="text/css" href="css/style.css"/>-->
+
+<!--						<div id="renderer_volume_container" style="width: 70%; height: 400px;">-->
+
+<!--<!--							<div id="3d" style="width: 49%; height: 49%; display: inline-block; float: left; border-right: 1px solid white;"></div>-->-->
+<!-- 							<div style="width: 30%; height: 100%;">-->
+<!--                  <div style="top: 0px; left: 0px;"> 3D View </div>-->
+<!--                  <div id="3d" style="width: 100%; height: 95%; max-height: 95%;"> </div>-->
+<!--              </div>-->
+
+<!--						 <div style="width: 30%; height: 100%;">-->
+<!--   	          <div style="top: 0px; left: 0px;"> Axial View </div>-->
+<!--              <div id="sliceX" style="width: 100%; height: 95%; max-height: 95%;"> </div>-->
+<!--            </div>-->
+
+<!--              <div style="width: 30%; height: 100%;">-->
+<!--        	      <div style="top: 0px; left: 0px;"> Coronal View </div>-->
+<!--                <div id="sliceY" style="width: 100%; height: 95%; max-height: 95%;"> </div>-->
+<!--              </div>-->
+
+<!--             <div style="width: 30%; height: 100%;">-->
+<!--   	          <div style="top: 0px; left: 0px;"> Axial View </div>-->
+<!--              <div id="sliceZ" style="width: 100%; height: 95%; max-height: 95%;"> </div>-->
+<!--            </div>-->
+
+<!--						</div>-->
 
 						<p class="related">
 					Further references
@@ -150,7 +215,28 @@
 						</p>
 					</div>
 					<div class="content" data-content="content-4">
-						<h2>Scalar <span>Representing Data in a Better Way</span></h2>
+						<h2>Scalar Indexes <span>Representing Data in a Visual Way</span></h2>
+
+						<p> 
+
+							Scalar indexes are representations of 
+
+						</p>
+
+						<script type="text/javascript" src="js/multiplanar.js"></script>
+						<link rel="stylesheet" type="text/css" href="css/multiplanar.css"/>
+						
+						<div id="scalar_index_container">
+								<div id="scalar_index_multiplanar" style="width: 55%; height: 800px; max-height: 770px;"></div>
+						</div>
+
+						<p> 
+
+							Scalar indexes can also be visualized as a conjunct of  
+
+						</p>
+
+
 
 						<p class="related">
 					Further references
@@ -162,6 +248,18 @@
 					<div class="content" data-content="content-5">
 						<h2>Colormaps <span>What are they and what's the utility?</span></h2>
 
+						<div id="div_webgl_canvas_colormap">
+                            <canvas id="webgl_colormap" width="400" height="400">
+                                Please use a browser that supports "canvas"
+                            </canvas>
+                        </div>
+
+                        <script src="js/superquadric/webgl-utils.js"></script>
+                        <script src="js/superquadric/webgl-debug.js"></script>
+                        <script src="js/superquadric/cuon-utils.js"></script>
+                        <script src="js/superquadric/cuon-matrix.js"></script>
+                        <script src="js/colormap/colormap.js"></script>
+						
 												<p class="related">
 					Further references
 <a href="https://en.wikipedia.org/wiki/Diffusion_MRI">[1] Website</a>
@@ -289,10 +387,6 @@
                             </div>
                            
                             <link rel="stylesheet" type="text/css" href="css/superquadric/superquadric_style.css" />
-							<script src="js/superquadric/webgl-utils.js"></script>
-							<script src="js/superquadric/webgl-debug.js"></script>
-							<script src="js/superquadric/cuon-utils.js"></script>
-							<script src="js/superquadric/cuon-matrix.js"></script>
                             <script src="js/superquadric/superquadric.js"></script>
                         </div>
                         
@@ -313,16 +407,34 @@
 					</div>
 					<div class="content" data-content="content-7">
 						<h2>Tractography <span>Visualizing Brain Fibers</span></h2>
-						<p>Tractography is a visual representations of brain ehite matter fiber anatomy, as such, is extremaly valuable for the planning and evaluation of neurosurgeries</p>
-						<div id='3d_tractography_container'> 
-							<div id="3d_tractography_visual" style="width: 50%; height: 50%;"></div>
-						</div>
-						<p class="related">
-					Further references
-<a href="https://en.wikipedia.org/wiki/Diffusion_MRI">[1] Website</a>
-<a href="Concepts and Theory ... ">[2] Article</a>
-<a href="On theory and principles ...">[3] Book</a>
-						</p>
+		
+							<p>
+									Tractography is a visual representations of brain white matter fiber anatomy, as such, explore the next visualization to observe some neural connections.
+							</p>
+						
+							<!-- Tractography render script -->			
+							<script type="text/javascript" src="js/tractography_3d.js"></script>
+							<!-- Tractography css files -->
+							<link rel="stylesheet" type="text/css" href="css/tractography.css" />
+		
+							<div id='threeD_tractography_container'> 
+								<div id="threeD_tractography_visual" style="width: 100%; height: 100%; max-height: 95%;"></div>
+							</div>
+
+							<p>
+									Estimating those fibers is the final result of a great many number of transformations, as explained in the previous sections, which cumulated
+									in a mathematical representation of the majority of fibers in a human brain.  
+							</p>
+
+						
+							<p class="related">
+		
+								Further references
+								<a href="https://en.wikipedia.org/wiki/Diffusion_MRI">[1] Website</a>
+								<a href="Concepts and Theory ... ">[2] Article</a>
+								<a href="On theory and principles ...">[3] Book</a>
+							
+							</p>
 					</div>
 
 				</section>
