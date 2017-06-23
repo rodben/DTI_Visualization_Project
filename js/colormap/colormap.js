@@ -1,8 +1,11 @@
 // ColoredCube.js (c) 2012 matsuda
 // Vertex shader program
-var Colormap = function()
+var Colormap = function(elementID, shaderID)
 {
-    this.VSHADER_SOURCE =
+		this.element_canvas_id = elementID;
+		 
+		
+		this.VSHADER_SOURCE =
         '#ifdef GL_ES\n' +
             'precision mediump float;\n' +
         '#endif\n' +
@@ -633,6 +636,20 @@ var Colormap = function()
             'gl_FragColor = vector2rgb_new_color_map(normalize(frag_vector.xyz));\n' +
         '}\n'
     ;
+
+		if (shaderID == 1) 
+			this.fragmentshader = this.FSHADER_SOURCE_ABSOLUTE_VALUE;
+		else if (shaderID == 2)
+			this.fragmentshader = this.FSHADER_SOURCE_BOY_SURFACE;
+		else if (shaderID == 3)
+			this.fragmentshader = this.FSHADER_SOURCE_MIRROR_SYMMETRY;
+		else if (shaderID == 4)
+			this.fragmentshader = this.FSHADER_SOURCE_NO_SYMMETRY;
+		else if (shaderID == 5)
+			this.fragmentshader = this.FSHADER_SOURCE_ROTATIONAL_SYMMETRY;
+		else  
+			this.fragmentshader = this.FSHADER_SOURCE_NEW_COLORMAP;
+		
 }
 
 Colormap.prototype.create = function() {
@@ -647,7 +664,7 @@ Colormap.prototype.create = function() {
     }
 
     // Initialize shaders
-    if (!initShaders(gl, this.VSHADER_SOURCE, this.FSHADER_SOURCE_NEW_COLORMAP)) {
+    if (!initShaders(gl, this.VSHADER_SOURCE, this.fragmentshader)) {
         console.log('Failed to intialize shaders.');
         return;
     }

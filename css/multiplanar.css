@@ -1,21 +1,43 @@
-#scalar_index_container {
-    display: inline-flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    
-    margin: 0 auto;
-    padding: 0;
-    height: 100%;
-    font-family: "Arial";
-    color: #fff;
+#scalar_index_container_fa {
+    display:flex;
+    justify-content:center;
 }
 
-#scalar_index_container canvas {
-    max-width: 100%;
-    max-height: 90%;
-}
 
-#scalar_index_multiplanar {
-    background-color: #000;
+#scalar_index_container_fa canvas {
 		margin: 0 auto;
+    padding: 0;
+		display:flex;
+    justify-content:center;
+}
+
+#scalar_index_multiplanar_fa {
+    width: 30%;
+		background-color: #000;
+}
+
+#scalar_webgl_sliders_fa {
+    width: 25%;
+}
+
+#scalar_index_container_md {
+    display:flex;
+    justify-content:center;
+}
+
+
+#scalar_index_container_md canvas {
+		margin: 0 auto;
+    padding: 0;
+		display:flex;
+    justify-content:center;
+}
+
+#scalar_index_multiplanar_md {
+    width: 30%;
+		background-color: #000;
+}
+
+#scalar_webgl_sliders_md {
+    width: 25%;
 }
