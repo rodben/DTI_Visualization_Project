@@ -12,13 +12,12 @@ window.onload = function() {
 		var multiplanar = new Multiplanar();
 		multiplanar.multiplanar_view();
 
-<<<<<<< HEAD
 		var render_grad = new Grad_render();   
     render_grad.load_grad_render();
 
 		//var main_volume_renderer_grad = new Main_volume_renderer_grad();   
     //main_volume_renderer_grad.load_vol_render();
-=======
+
 		document.getElementById("fa_x_slice_index").oninput = function() { multiplanar.FAsliceXHandler("fa_x_slice_index"); };
 		document.getElementById("fa_y_slice_index").oninput = function() { multiplanar.FAsliceYHandler("fa_y_slice_index"); };
 		document.getElementById("fa_z_slice_index").oninput = function() { multiplanar.FAsliceZHandler("fa_z_slice_index"); };
@@ -26,7 +25,6 @@ window.onload = function() {
 		document.getElementById("md_x_slice_index").oninput = function() { multiplanar.MDsliceXHandler("md_x_slice_index"); };
 		document.getElementById("md_y_slice_index").oninput = function() { multiplanar.MDsliceYHandler("md_y_slice_index"); };
 		document.getElementById("md_z_slice_index").oninput = function() { multiplanar.MDsliceZHandler("md_z_slice_index"); };
->>>>>>> e1e60ff110cfde6f927a1a0e437777545a3b0707
     
     document.getElementById("eigenvalue_01").oninput = function() { superquadric.eigenvalue01Handler("eigenvalue_01"); };
     document.getElementById("eigenvalue_02").oninput = function() { superquadric.eigenvalue02Handler("eigenvalue_02"); };
