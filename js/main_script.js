@@ -11,6 +11,10 @@ window.onload = function() {
 
 		var multiplanar = new Multiplanar();
 		multiplanar.multiplanar_view();
+
+		document.getElementById("fa_x_slice_index").oninput = function() { multiplanar.FAsliceXHandler("fa_x_slice_index"); };
+		document.getElementById("fa_y_slice_index").oninput = function() { multiplanar.FAsliceYHandler("fa_y_slice_index"); };
+		document.getElementById("fa_z_slice_index").oninput = function() { multiplanar.FAsliceZHandler("fa_z_slice_index"); };
     
     document.getElementById("eigenvalue_01").oninput = function() { superquadric.eigenvalue01Handler("eigenvalue_01"); };
     document.getElementById("eigenvalue_02").oninput = function() { superquadric.eigenvalue02Handler("eigenvalue_02"); };

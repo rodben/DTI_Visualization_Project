@@ -1,21 +1,47 @@
-#scalar_index_container {
-    display: inline-flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    
-    margin: 0 auto;
-    padding: 0;
-    height: 100%;
-    font-family: "Arial";
-    color: #fff;
+/*#scalar_index_container {*/
+/*    display: inline-flex;*/
+/*    flex-flow: row wrap;*/
+/*    justify-content: space-around;*/
+/*    */
+/*    margin: 0 auto;*/
+/*    padding: 0;*/
+/*    height: 100%;*/
+/*    font-family: "Arial";*/
+/*    color: #fff;*/
+/*		width: 100%;*/
+/*/*    padding-top: 100%; /* 1:1 Aspect Ratio */*/*/
+/*}*/
+
+/*#scalar_index_container canvas {*/
+/*		width: 90%;*/
+/*		height: same-as-width;*/
+/*    max-width: 100%;*/
+/*    max-height: 100%;*/
+/*}*/
+
+/*#scalar_index_multiplanar {*/
+/*    background-color: #000;*/
+/*		margin: 0 auto;*/
+/*}*/
+
+#scalar_index_container_fa {
+    display:flex;
+    justify-content:center;
 }
 
-#scalar_index_container canvas {
-    max-width: 100%;
-    max-height: 90%;
-}
 
-#scalar_index_multiplanar {
-    background-color: #000;
+#scalar_index_container_fa canvas {
 		margin: 0 auto;
+    padding: 0;
+		display:flex;
+    justify-content:center;
+}
+
+#scalar_index_multiplanar_fa {
+    width: 30%;
+		background-color: #000;
+}
+
+#scalar_webgl_sliders_fa {
+    width: 25%;
 }
