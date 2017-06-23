@@ -142,14 +142,61 @@
 					</div>
 					<div class="content" data-content="content-3">
 						<h2>Conversion DTI to DWI <span>How to obtain diffusion characteristics</span></h2>
-						<p>Converting simple DWI images to ...</p>
+						
+                        <p> From the diffusion-weighted signals, information about the diffusivity of the water molecules in
+							the tissues can be obtained after the application of a processing on the generated signals. This
+                            processing consists in estimating for each voxel a diffusion tensor <strong> D </strong> that 
+                            best synthesizes all the measured diffusion-weighted signals. This estimation is based on the 
+                            Stejskal-Tanner's equation [2]
+                        </p>
+                        
+                        <figure>
+                            <img src="img/tensor/eq.png" width="20%"/>
+                        </figure>
+                        
+                        <p>
+                            and the logic used to obtain it can be found in [1]. In this equation, <strong>S</strong> is usually defined as
+                            the diffusion-weighted signal measured with a diffusion weighting factor <strong>b</strong> and a gradient in the direction <strong> g </strong> =
+                            [g<sub>x</sub>; g<sub>y</sub>; g<sub>z</sub>]<sup><strong>T</strong> </sup>(the index <strong>T</strong> stands
+                            for the vector transpose, making it a column vector), <strong>S<sub>0</sub></strong> is a signal without weighting 
+                            and <strong>D</strong> is the desired tensor.
+                        </p>
+                        
+                        <p>
+                            The desired tensor <strong>D</strong> is a symmetric matrix of order 2. Thus, <strong>D<sub>ij</sub></strong> =
+                            <strong>D<sub>ji</sub></strong>:
+                        </p>
+                            
+                            <figure>
+                                <img src="img/tensor/tensor.png" width="20%"/>
+                            </figure>
+                        
+                        <p>
+                            Through the diagonalization, the tensor <strong>D</strong> is decomposed into three eigenvalues
+                            &lambda;<sub>1</sub>, &lambda;<sub>2</sub> e &lambda;<sub>3</sub> (&lambda;<sub>1</sub> >> &lambda;<sub>2</sub> >> &lambda;<sub>3</sub>)
+                            and their respective eigenvectors <i>e<sub>1</sub></i>, <i>e<sub>2</sub></i> e <i>e<sub>3</sub></i>. The eigenvalues
+                            are diffusion coefficients in the directions of diffusion indicated by eigenvectors. To determine the
+                            tensor <strong>D</strong>, at least 1 volume without weighting and at least 6 volumes of DWI is required. 
+                            This is due to the fact that, because it is symmetrical, there are only 6 elements to be discovered:
+                            <strong>D<sub>xx</sub></strong>, <strong>D<sub>yy</sub></strong>, <strong>D<sub>zz</sub></strong>,
+                            <strong>D<sub>xy</sub></strong>, <strong>D<sub>xz</sub></strong> and <strong>D<sub>yz</sub></strong>.
+                        </p>
+                        
+                        <p>
+                            In order to find the best solution for the Stejskal-Tanner's equation, several methods of regression 
+                            are available in the literature to estimate these six elements. [3] separates these methods into four classes:
+                            maximum likelihood, least squares, Bayesian, and robust approaches. Among them, those based on least-squares 
+                            regression are the most popular. In addition, a linear least squares approach, linearly weighted and non-linear
+                            [3,4] is also distinguished. On the other hand, the most recommended models are those that use robust approaches
+                            [5] able to identify and exclude discrepant values from the estimation process.
+                        </p>
 						
 <!--						<script type="text/javascript" src="js/script_rod.js"></script>-->
 <!--						<link rel="stylesheet" type="text/css" href="css/style.css"/>-->
 
 <!--						<div id="renderer_volume_container" style="width: 70%; height: 400px;">-->
 
-<!--<!--							<div id="3d" style="width: 49%; height: 49%; display: inline-block; float: left; border-right: 1px solid white;"></div>-->-->
+<!--<!--							<div id="3d" style="width: 49%; height: 49%; display: inline-block; float: left; border-right: 1px solid white;"></div>-->
 <!-- 							<div style="width: 30%; height: 100%;">-->
 <!--                  <div style="top: 0px; left: 0px;"> 3D View </div>-->
 <!--                  <div id="3d" style="width: 100%; height: 95%; max-height: 95%;"> </div>-->
@@ -173,10 +220,15 @@
 <!--						</div>-->
 
 						<p class="related">
-					Further references
-<a href="https://en.wikipedia.org/wiki/Diffusion_MRI">[1] Website</a>
-<a href="Concepts and Theory ... ">[2] Article</a>
-<a href="On theory and principles ...">[3] Book</a>
+                            Further references
+                            <a href="http://www.sciencedirect.com/science/article/pii/B9780123983985000059" target="_blank"> [1] MORI; TOURNIER, 2014b</a>
+                            <a href="http://dx.doi.org/10.1007/978-1-4939-3118-7" target="_blank">[2] HECKE et al., 2016 </a>
+                            <a href="http://dx.doi.org/10.1093/med/9780195369779.003.0016" target="_blank">[3] KOAY, 2010 </a>
+                            <a href="http://www.sciencedirect.com/science/article/pii/S1053811913005223" target="_blank">[3] VERAART et al., 2013 </a>
+                            <a href="http://dx.doi.org/10.1002/nbm.1543" target="_blank">[4] JONES; CERCIGNANI, 2010 </a>
+                            <a href="http://dx.doi.org/10.1016/j.neuroimage.2012.06.081" target="_blank">[5] JONES et al., 2013 </a>
+                             
+                            
 						</p>
 					</div>
 					<div class="content" data-content="content-4">
