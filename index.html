@@ -153,12 +153,35 @@
 
 						<p> 
 
-							Scalar indexes are representations of 
+							Scalar indexes are many ways of representing color tables, below a visual representations of MD Scalar Index.
 
 						</p>
 
 						<script type="text/javascript" src="js/multiplanar.js"></script>
 						<link rel="stylesheet" type="text/css" href="css/multiplanar.css"/>
+
+							<div id="scalar_index_container_md">
+								<div id="scalar_index_multiplanar_md" style="width: 40%; height: 400px "></div>
+
+								<div id="scalar_webgl_sliders_md" ">
+                                <div>
+                                    <br/>
+                                    <font color="red">Sagittal:</font> <input id="md_x_slice_index" type ="range" step ="1" max="200" min ="0" />
+
+                                    <br/>
+                                    <font color="green">Coronal:</font> <input id="md_y_slice_index" type ="range" step ="1" max="200" min ="0" />
+
+                                    <br/>
+                                    <font color="blue">Axial:</font> <input id="md_z_slice_index" type ="range" step ="1" max="100" min ="0" />
+                                </div>
+                </div>
+						</div>
+
+						<p> 
+
+							Below FA Scalar indexes is demonstraded in a multiplanar view   
+
+						</p>
 						
 						<div id="scalar_index_container_fa">
 								<div id="scalar_index_multiplanar_fa" style="width: 40%; height: 400px "></div>
@@ -166,22 +189,20 @@
 								<div id="scalar_webgl_sliders_fa" ">
                                 <div>
                                     <br/>
-                                    X: <input id="fa_x_slice_index" type ="range" step ="1" max="200" min ="0" />
+                                    <font color="red">Sagittal:</font> <input id="fa_x_slice_index" type ="range" step ="1" max="200" min ="0" />
 
                                     <br/>
-                                    Y: <input id="fa_y_slice_index" type ="range" step ="1" max="200" min ="0" />
+                                    <font color="green">Coronal:</font> <input id="fa_y_slice_index" type ="range" step ="1" max="200" min ="0" />
 
                                     <br/>
-                                    Z: <input id="fa_z_slice_index" type ="range" step ="1" max="200" min ="0" />
+                                    <font color="blue">Axial:</font> <input id="fa_z_slice_index" type ="range" step ="1" max="100" min ="0" />
                                 </div>
                 </div>
 						</div>
 
-						<p> 
+						
 
-							Scalar indexes can also be visualized as a conjunct of  
-
-						</p>
+					
 
 
 
