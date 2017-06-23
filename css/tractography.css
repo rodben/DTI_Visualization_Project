@@ -1,13 +1,4 @@
 
-/*#threeD_tractography_container{*/
-/*	background-color: #000;*/
-/*/*	display: inline-flex;*/*/
-/*/*	flex-flow: row wrap;*/*/
-/*/*	justify-content: space-around;*/*/
-/*  display:flex;*/
-/*  justify-content:center;*/
-/*}*/
-
 #threeD_tractography_container {
     display: inline-flex;
     flex-flow: row wrap;

@@ -1,0 +1,21 @@
+#scalar_index_container {
+    display: inline-flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    
+    margin: 0 auto;
+    padding: 0;
+    height: 100%;
+    font-family: "Arial";
+    color: #fff;
+}
+
+#scalar_index_container canvas {
+    max-width: 100%;
+    max-height: 90%;
+}
+
+#scalar_index_multiplanar {
+    background-color: #000;
+		margin: 0 auto;
+}
