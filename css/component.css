@@ -363,7 +363,7 @@ button.content-switch::before {
 	margin: 0 auto;
 	padding: 0.5em 2em;
 	line-height: 1.5;
-	text-align: left;
+	text-align: justify;
 	font-family: 'Book Antiqua', Palatino, 'Palatino Linotype', 'Palatino LT STD', Georgia, serif;
 }
 
