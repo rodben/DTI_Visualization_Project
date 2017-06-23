@@ -1,4 +1,3 @@
-
 xslicegui = function(targetRenderer, targetVolume, bbox){
     this.renderer = targetRenderer;
     this.renderer.interactor.xsliceguiref = this;
@@ -169,19 +168,14 @@ xslicegui.prototype.setupmodegui = function(){
     });
 }
 
-function multiplanar_view() {
-
-    // create and initialize the multiplanar 3D renderer
-		//
-    // try to create the 3D renderer
-    //
-    _webGLFriendly = true;
+var Multiplanar = function() {
+		    _webGLFriendly = true;
     try {
         // try to create and initialize a 3D renderer
-        r = new X.renderer3D();
-        r.container = 'scalar_index_multiplanar';
-				r.bgColor = [.15, .15, .15];
-        r.init();
+        this.r = new X.renderer3D();
+        this.r.container = 'scalar_index_multiplanar';
+				this.r.bgColor = [.15, .15, .15];
+        this.r.init();
     } catch (Exception) {
 
     // no webgl on this machine
@@ -189,24 +183,23 @@ function multiplanar_view() {
 
     }
 
-  
-    // Create a X.volume
-    volume2 = new X.volume();
+		this.fa_volume = new X.volume();
+		this.fa_volume.file = 'volumes/dti_FA.nii.gz';
+		
 
-    
-    // And attach a volume
-    volume2.file = 'volumes/dti_fa_color.nii';
- 
-    //var volume_file_name = sessionStorage.getItem('volumes/dti_fa_color.nii');
-    //volume.file = volume_file_name;
+}
 
-		r.add(volume2);
+Multiplanar.prototype.multiplanar_view = function() {
+
+
+		//Add volume to render
+		this.r.add(this.fa_volume);
 
 
 //    // attach event!
 //    // the onShowtime method gets executed after all files were fully loaded and
 //    // just before the first rendering attempt
-//    r.onShowtime = function() {
+//    this.r.onShowtime = function() {
 //        // Hide Y and Z slices
 //        volume.children[1]['visible'] = false;
 //        volume.children[2]['visible'] = false;
@@ -267,7 +260,7 @@ function multiplanar_view() {
 //    }
 
     // adjust the camera position a little bit, just for visualization purposes
-    r.camera.position = [270, 250, 330];
+    this.r.camera.position = [270, 250, 330];
 
-    r.render();
-};     
+    this.r.render();
+};    

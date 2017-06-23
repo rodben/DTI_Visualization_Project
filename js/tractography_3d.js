@@ -1,14 +1,20 @@
-function tractography_render_3d() {
+var Tractography = function()
+{
+		this.full_fiber = new X.fibers();
+		this.full_fiber.file  = 'volumes/raphael.trk';
 
-    //
+		this.full_fiber_volume = new X.volume();
+		this.full_fiber_volume.file = 'volumes/dti_dwi.nii';
+			
+		    //
     // try to create the 3D renderer
     //
     _webGLFriendly = true;
     try {
         // try to create and initialize a 3D renderer
-        threeD = new X.renderer3D();
-        threeD.container = 'threeD_tractography_visual';
-        threeD.init();
+        this.threeD = new X.renderer3D();
+        this.threeD.container = 'threeD_tractography_visual';
+        this.threeD.init();
     } catch (Exception) {
 
     // no webgl on this machine
@@ -16,32 +22,31 @@ function tractography_render_3d() {
 
     }
 
-		  // create a new X.fibers
-  	var fibers = new X.fibers();
-  	// .. associate the TrackVis .TRK file
-  	fibers.file = 'volumes/raphael.trk';
-  	fibers.caption = 'The Corpus Callosum:<br>connecting the two hemispheres<br>of the human brain.';
-//TODO Add gui to control opacity and line width	
-		fibers.linewidth = fibers.linewidth * 2;
-		fibers.opacity = 0.8;
+}
+
+Tractography.prototype.tractography_render_3d = function() {
+
+
+  	this.full_fiber.caption = 'Full Brain Fibers';
+	//TODO Add gui to control opacity and line width	
+		this.full_fiber.linewidth = this.full_fiber.linewidth * 2;
+		this.full_fiber.opacity = 0.8;
 
   	// Add the fibers
-  	threeD.add(fibers);
+  	this.threeD.add(this.full_fiber);
 
 		//Create volume associated with fiber file
-		var volume = new X.volume();
-		volume.file = 'volumes/dti_dwi.nii';
-		volume.opacity = 0.05;		//Low opacity to be able to improve rotation
-		//volume.volumeRendering = true;
-		volume.lowerThreshold = 0.9;
+
+		this.full_fiber_volume.opacity = 0.05;		//Low opacity to be able to improve rotation
+		//this.full_fiber_volume.volumeRendering = true;
+		this.full_fiber_volume.lowerThreshold = 0.9;
   
 		//Add The Volume
-		//threeD.add(volume);
+		//this.threeD.add(this.full_fiber_volume);
 
     // start the loading/rendering
     //sliceX.render();
-		threeD.camera.position = [65, 75, 110];
-		threeD.render();
+		this.threeD.camera.position = [65, 75, 110];
+		this.threeD.render();
 
-
-};
+}
