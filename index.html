@@ -133,28 +133,45 @@
                                 </figure>
                             </div>
                         </figure>
-
+			<!-- 
 			<select id="gradients_sel">
 				<option value="0">Gradient 0 (b0)</option>
 				<option value="1">Gradient 1</option>
 				<option value="15">Gradient 15</option>
 				<option value="33">Gradient 33</option>
 			</select>
-                        
+                        -->
+
+			<!-- Script render gradients-->
 			<script type="text/javascript" src="js/script_grad.js"></script>
+			<!-- Tractography css files -->
+			<link rel="stylesheet" type="text/css" href="css/gradient.css" />
 
+			<div id="scalar_index_container_fa" style="width: 70%; height: 400px;">
+			<div id="sliceX_grad" style="width: 30%; height: 400 px"> </div>
+			<div id="sliceY_grad" style="width: 30%; height: 400 px "> </div>
+			<div id="sliceZ_grad" style="width: 30%; height: 400 px "> </div>
+			<div id="caption_grad" style="width: 30%; height: 200 px"> Sagittal View </div>
+			<div id="caption_grad" style="width: 30%; height: 200 px"> Coronal View </div>
+			<div id="caption_grad" style="width: 30%; height: 200 px"> Axial View </div>
+			</div>
+
+			<div id="scalar_index_container_fa" style="width: 70%; height: 400px;">
+			<div id="sliceX_grad15" style="width: 30%; height: 400 px"> </div>
+			<div id="sliceY_grad15" style="width: 30%; height: 400 px "> </div>
+			<div id="sliceZ_grad15" style="width: 30%; height: 400 px "> </div>
+			<div id="caption_grad" style="width: 30%; height: 200 px"> Sagittal View </div>
+			<div id="caption_grad" style="width: 30%; height: 200 px"> Coronal View </div>
+			<div id="caption_grad" style="width: 30%; height: 200 px"> Axial View </div>
+			</div>
+
+			<!-- 
                         <div id="renderer_volume_container" style="width: 70%; height: 400px;">
-			<!-- <div id="renderer_volume_container" style="width: 50%; height: 200px;"> -->
-
-                            <!-- <div id='loading'>
-                                <h1 class='onair'>Loading data...</h1> 
-                                <div class="loader-bg boxair"></div>
-                            </div> -->
 
                             <div style="width: 30%; height: 100%;">
                                 <div style="top: 0px; left: 0px;"> Sagittal View </div>
                                 <div id="sliceX_grad" style="width: 100%; height: 95%; max-height: 95%;"> </div>
-				<!-- <div id="sliceX_grad" style="width: 80%; height: 65%; max-height: 65%;"> </div> -->
+				
                             </div>
 
                             <div style="width: 30%; height: 100%;">
@@ -166,8 +183,8 @@
                                 <div style="top: 0px; left: 0px;"> Axial View </div>
                                 <div id="sliceZ_grad" style="width: 100%; height: 95%; max-height: 95%;"> </div>
                             </div>
-
                         </div>
+			-->
 
 						<p class="related">
                             Further references

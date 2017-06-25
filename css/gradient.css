@@ -1,0 +1,58 @@
+
+#scalar_index_container_fa {
+    display: inline-flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    
+    margin: 0 auto;
+    padding: 0;
+    height: 100%;
+    font-family: "Arial";
+    color: #fff;
+		width: 65%;
+		height: 1000px;
+}
+
+#scalar_index_container_fa canvas {
+		width: 80%;
+		height: 100%;    
+		max-width: 100%;
+    max-height: 95%;
+}
+
+#sliceX_grad {
+    background-color: #000;
+		margin: 0 auto;
+}
+
+#sliceY_grad {
+    background-color: #000;
+		margin: 0 auto;
+}
+
+#sliceZ_grad {
+    background-color: #000;
+		margin: 0 auto;
+}
+
+#sliceX_grad15 {
+    background-color: #000;
+		margin: 0 auto;
+}
+
+#sliceY_grad15 {
+    background-color: #000;
+		margin: 0 auto;
+}
+
+#sliceZ_grad15 {
+    background-color: #000;
+		margin: 0 auto;
+}
+
+#caption_grad {
+    background-color: #000;
+		margin: 0 auto;
+}
+
+

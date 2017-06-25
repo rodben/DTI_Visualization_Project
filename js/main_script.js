@@ -13,7 +13,10 @@ window.onload = function() {
 		multiplanar.multiplanar_view();
 
 		var render_grad = new Grad_render();   
-    render_grad.load_grad_render();
+    		render_grad.load_grad_render();
+
+		var render_grad15 = new Grad_render15();   
+    		render_grad15.load_grad_render15();
 
 		//var main_volume_renderer_grad = new Main_volume_renderer_grad();   
     //main_volume_renderer_grad.load_vol_render();
@@ -30,6 +33,6 @@ window.onload = function() {
     document.getElementById("eigenvalue_02").oninput = function() { superquadric.eigenvalue02Handler("eigenvalue_02"); };
     document.getElementById("eigenvalue_03").oninput = function() { superquadric.eigenvalue03Handler("eigenvalue_03"); };
 
-    document.getElementById("gradients_sel").onchange = function() { render_grad.select_grad_render("gradients_sel"); };
+    //document.getElementById("gradients_sel").onchange = function() { render_grad.select_grad_render("gradients_sel"); };
 
 }

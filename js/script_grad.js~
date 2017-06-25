@@ -44,59 +44,6 @@ var Grad_render = function()
     
 }
 
-Grad_render.prototype.select_grad_render = function(x) {
-
-    var aux = document.getElementById(x);
-    var value = aux.options[aux.selectedIndex].value
-
-    if (value=="0"){
-	this.grad_volume.file = 'volumes/test4d_0.nii.gz';
-	this.sliceX.resetViewAndRender();
-	this.sliceX.onShowtime();
-	this.sliceX.render();
-	this.sliceY.resetViewAndRender();
-	this.sliceY.onShowtime();
-	this.sliceY.render();
-	this.sliceZ.resetViewAndRender();
-	this.sliceZ.onShowtime();
-	this.sliceZ.render();
-    } else if (value=="1"){
-	this.grad_volume.file = 'volumes/test4d_1.nii.gz';
-	this.sliceX.resetViewAndRender();
-	this.sliceX.onShowtime();
-	this.sliceX.render();
-	this.sliceY.resetViewAndRender();
-	this.sliceY.onShowtime();
-	this.sliceY.render();
-	this.sliceZ.resetViewAndRender();
-	this.sliceZ.onShowtime();
-	this.sliceZ.render();
-    } else if (value=="15"){
-	this.grad_volume.file = 'volumes/test4d_15.nii.gz';
-	this.sliceX.resetViewAndRender();
-	this.sliceX.onShowtime();
-	this.sliceX.render();
-	this.sliceY.resetViewAndRender();
-	this.sliceY.onShowtime();
-	this.sliceY.render();
-	this.sliceZ.resetViewAndRender();
-	this.sliceZ.onShowtime();
-	this.sliceZ.render();
-    } else {
-	this.grad_volume.file = 'volumes/test4d_33.nii.gz';
-	this.sliceX.resetViewAndRender();
-	//this.sliceX.onShowtime();
-	this.sliceX.render();
-	this.sliceY.resetViewAndRender();
-	//this.sliceY.onShowtime();
-	this.sliceY.render();
-	this.sliceZ.resetViewAndRender();
-	//this.sliceZ.onShowtime();
-	this.sliceZ.render();
-}
-
-}
-
 Grad_render.prototype.load_grad_render = function() {
 
     // add the volume in the main renderer
