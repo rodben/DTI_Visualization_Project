@@ -102,11 +102,20 @@
 					<div class="content" data-content="content-2">
 						<h2>RAW Data <span>How to understand Brain microstructure</span></h2>
 						
-						<p>Diffusion Weighted Image (DWI) shows constrast based-on diffusion differences of water molecules  inside the brain.</p>
+						<p>Diffusion Weighted Image (DWI) shows contrast based-on diffusion differences of water molecules  inside the brain.</p>
 
-<p> The diffusion represents random thermal motion of the molecules, also known as Brownian motion. It depends on the various factors as molecule type at study, temperature and the micro-environment in wich diffusion takes place [1]. In a fibers bundle, the effective molecular diffusion is greater in direction along the fiber than in orthogonal direction to fiber. This type of diffusion is known as anisotropic diffusion in contrast to isotropic diffusion [2].</p>
+			<figure id="my_dwi">
+                            <div>
+                                <figure>
+                                    <img src="img/dwi/DWI.png" />
+                                    <figcaption> DWI acquisition </figcaption>
+                                </figure>
+                            </div>
+                        </figure>
 
-<p> DWI adquisition is done applying two magnetic field gradients: the first one causes phase shifts in the molecules while the second one cancel these shifts reorienting stationary spins. Reorientation to the initial state will not be perfect for molecules that have moved during lapse between gradients. This "not perfect reorientation" causes a signal loss. The signal loss magnitude is determined by the degree of random movement (given by environment diffusion coeficient) and the gradients intensity and duration. The loss signal magnitude can be improved increasing intesity and duration of the gradients.</p>
+<p> The diffusion represents random thermal motion of the molecules, also known as Brownian motion. It depends on the various factors as molecule type at study, temperature and the micro-environment in which diffusion takes place [1]. In a fibers bundle, the effective molecular diffusion is greater in direction along the fiber than in orthogonal direction to fiber. This type of diffusion is known as anisotropic diffusion in contrast to isotropic diffusion [2].</p>
+
+<p> DWI acquisition is done applying two magnetic field gradients: the first one causes phase shifts in the molecules while the second one cancel these shifts reorienting stationary spins. Reorientation to the initial state will not be perfect for molecules that have moved during lapse between gradients. This "not perfect reorientation" causes a signal loss. The signal loss magnitude is determined by the degree of random movement (given by environment diffusion coefficient) and the gradients intensity and duration. The loss signal magnitude can be improved increasing intensity and duration of the gradients.</p>
 
 			<figure id="my_dwi">
                             <div>
@@ -121,7 +130,7 @@
                             </div>
                         </figure>
 
-<p> Where A represents the signal loss, D is the diffusion coefficient and b is a variable that depends of the applied gradients. So, in DWI, the signal intensity per voxel is the signal intensity without applied gradient (ISo: = 0s/mm2) reduced by the signal loss A. In presence of anisotropy, in order to achieve tissue full characterization gradients in various directions are applied obtaining a intensity 3D map in each direction.</p>
+<p> Where A represents the signal loss, D is the diffusion coefficient and b is a variable that depends of the applied gradients. So, in DWI, the signal intensity per voxel is the signal intensity without applied gradient (IS<sub>0</sub>: = 0s/mm<sup>2</sup>) reduced by the signal loss A. In presence of anisotropy, in order to achieve tissue full characterization gradients in various directions are applied obtaining a intensity 3D map in each direction (IS<sub>n</sub>).</p>
 
 
 
@@ -147,6 +156,8 @@
 			<!-- Tractography css files -->
 			<link rel="stylesheet" type="text/css" href="css/gradient.css" />
 
+			<p>B0 Gradient (IS<sub>0</sub>)</p>
+
 			<div id="scalar_index_container_fa" style="width: 70%; height: 400px;">
 			<div id="sliceX_grad" style="width: 30%; height: 400 px"> </div>
 			<div id="sliceY_grad" style="width: 30%; height: 400 px "> </div>
@@ -155,6 +166,8 @@
 			<div id="caption_grad" style="width: 30%; height: 200 px"> Coronal View </div>
 			<div id="caption_grad" style="width: 30%; height: 200 px"> Axial View </div>
 			</div>
+
+			<p>Gradient 15 (IS<sub>15</sub>)</p>
 
 			<div id="scalar_index_container_fa" style="width: 70%; height: 400px;">
 			<div id="sliceX_grad15" style="width: 30%; height: 400 px"> </div>
