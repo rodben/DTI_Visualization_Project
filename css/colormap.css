@@ -1,0 +1,21 @@
+#div_webgl_canvas_colormap_a_b {
+    display:flex;
+    justify-content:center;
+}
+
+#div_webgl_canvas_colormap_a_b canvas {
+		margin: 0 auto;
+    padding: 0;
+		display:flex;
+    justify-content:center;
+}
+
+#webgl_colormap_a {
+    width: 30%;
+		background-color: #111;
+}
+
+#webgl_colormap_b {
+    width: 30;
+		background-color: #111;
+}

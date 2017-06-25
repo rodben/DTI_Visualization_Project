@@ -654,7 +654,7 @@ var Colormap = function(elementID, shaderID)
 
 Colormap.prototype.create = function() {
   // Retrieve <canvas> element
-    var canvas = document.getElementById('webgl_colormap');
+    var canvas = document.getElementById(this.element_canvas_id);
 
     // Get the rendering context for WebGL
     var gl = getWebGLContext(canvas);

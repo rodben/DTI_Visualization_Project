@@ -1,14 +1,20 @@
 window.onload = function() {
     
-		var colormap = new Colormap('webgl_colormap', 1);
-    colormap.create();
-	
+		var colormap_a = new Colormap('webgl_colormap_a', 1);
+    colormap_a.create();
+		
+		var colormap_b = new Colormap('webgl_colormap_b', 3);
+    colormap_b.create();
+
     var superquadric = new Superquadric();
     superquadric.create();
 
-		var tractography = new Tractography();
-		tractography.tractography_render_3d();
+		var full_brain = new Tractography('threeD_fullbrain_visual', 1);
+		full_brain.tractography_render_3d();
 
+		var big_fibers = new Tractography('threeD_big_fibers_visual', 2);
+		big_fibers.tractography_render_3d();
+	
 		var multiplanar = new Multiplanar();
 		multiplanar.multiplanar_view();
 
