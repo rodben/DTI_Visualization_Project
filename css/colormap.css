@@ -1,0 +1,108 @@
+/*   Absolute Value Colormap */
+#div_webgl_canvas_colormap_abs {
+    display:inline;
+    justify-content:center;
+}
+
+#div_webgl_canvas_colormap_abs canvas {
+		margin: 0 auto;
+    padding: 0;
+		display:inline;
+    justify-content:center;
+}
+
+#webgl_colormap_abs {
+    width: 30%;
+		background-color: #111;
+}
+
+/*   Boy Surface Colormap */
+#div_webgl_canvas_colormap_boy {
+    display:inline;
+    justify-content:center;
+}
+
+#div_webgl_canvas_colormap_boy canvas {
+		margin: 0 auto;
+    padding: 0;
+		display:inline;
+    justify-content:center;
+}
+
+#webgl_colormap_boy {
+    width: 30%;
+		background-color: #111;
+}
+
+/*   Mirror Symetry Colormap */
+#div_webgl_canvas_colormap_mirror {
+    display:inline;
+    justify-content:center;
+}
+
+#div_webgl_canvas_colormap_mirror canvas {
+		margin: 0 auto;
+    padding: 0;
+		display:inline;
+    justify-content:center;
+}
+
+#webgl_colormap_mirror {
+    width: 30%;
+		background-color: #111;
+}
+
+/*   No Symetry Colormap */
+#div_webgl_canvas_colormap_no_sym {
+    display:inline;
+    justify-content:center;
+}
+
+#div_webgl_canvas_colormap_no_sym canvas {
+		margin: 0 auto;
+    padding: 0;
+		display:inline;
+    justify-content:center;
+}
+
+#webgl_colormap_no_sym {
+    width: 30%;
+		background-color: #111;
+}
+
+/*   Rotational Symetry Colormap */
+#div_webgl_canvas_colormap_rot_sym {
+    display:inline;
+    justify-content:center;
+}
+
+#div_webgl_canvas_colormap_rot_sym canvas {
+		margin: 0 auto;
+    padding: 0;
+		display:inline;
+    justify-content:center;
+}
+
+#webgl_colormap_rot_sym {
+    width: 30%;
+		background-color: #111;
+}
+
+/*   Rapahel Symetry Colormap */
+#div_webgl_canvas_colormap_raph {
+    display:inline;
+    justify-content:center;
+}
+
+#div_webgl_canvas_colormap_raph canvas {
+		margin: 0 auto;
+    padding: 0;
+		display:inline;
+    justify-content:center;
+}
+
+#webgl_colormap_raph {
+    width: 30%;
+		background-color: #111;
+}
+

@@ -1,14 +1,32 @@
 window.onload = function() {
     
-		var colormap = new Colormap('webgl_colormap', 1);
-    colormap.create();
-	
+		var colormap_a = new Colormap('webgl_colormap_abs', 1);
+    colormap_a.create();
+		
+		var colormap_b = new Colormap('webgl_colormap_boy', 2);
+    colormap_b.create();
+		
+		var colormap_c = new Colormap('webgl_colormap_mirror', 3);
+    colormap_c.create();
+
+		var colormap_d = new Colormap('webgl_colormap_no_sym', 4);
+    colormap_d.create();
+
+		var colormap_e = new Colormap('webgl_colormap_rot_sym', 5);
+    colormap_e.create();
+
+		var colormap_f = new Colormap('webgl_colormap_raph', 6);
+    colormap_f.create();
+
     var superquadric = new Superquadric();
     superquadric.create();
 
-		var tractography = new Tractography();
-		tractography.tractography_render_3d();
+		var full_brain = new Tractography('threeD_fullbrain_visual', 1);
+		full_brain.tractography_render_3d();
 
+		var big_fibers = new Tractography('threeD_big_fibers_visual', 2);
+		big_fibers.tractography_render_3d();
+	
 		var multiplanar = new Multiplanar();
 		multiplanar.multiplanar_view();
 

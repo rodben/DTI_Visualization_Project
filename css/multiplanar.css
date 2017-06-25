@@ -3,7 +3,6 @@
     justify-content:center;
 }
 
-
 #scalar_index_container_fa canvas {
 		margin: 0 auto;
     padding: 0;
@@ -24,7 +23,6 @@
     display:flex;
     justify-content:center;
 }
-
 
 #scalar_index_container_md canvas {
 		margin: 0 auto;

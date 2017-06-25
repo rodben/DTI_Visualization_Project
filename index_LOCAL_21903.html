@@ -348,93 +348,12 @@
 					<div class="content" data-content="content-5">
 						<h2>Colormaps <span>What are they and what's the utility?</span></h2>
 
-								<p>
-									Colormap is, as the name suggest, a map between a variable and a color. In a 3D spatial context, the color is used to indicate a specific spatial direction,
-								 that is, a 3D spatial vector direction will be translated in a specific color. To find a correlation that bring value to the desired spatial visualization is 
-									a challenging task to designers and final users, because different choices may enhance different aspects. Below we propose a series of visual representations 
-									of different colormaps, each one is rendered in a sphere where the normal vector of a point in the surface represent the spatial direction considered on the map.
-								</p>	
-		
-								<h3> Absolute value Colormap </h3>
-								<div id="div_webgl_canvas_colormap_abs">
-                		<canvas id="webgl_colormap_abs" height="400" width="400">
-                		    Please use a browser that supports "canvas"
-														
-                		</canvas>
-							  </div>
-								
-								<p>
-											In this colormap the absolute value of the three component of the 3D Spatial vector (x,y,z) is translated into RGB colors. 
-								</p>
-										<figure>
-                      <img src="img/colormaps/absolute_value.jpg" />
-<!--                      <figcaption> Aboslute value </figcaption>-->
-                    </figure>
+						<div id="div_webgl_canvas_colormap">
+                            <canvas id="webgl_colormap" width="400" height="400">
+                                Please use a browser that supports "canvas"
+                            </canvas>
+                        </div>
 
-								<h3> Boy Surface Colormap </h3>
-								<div id="div_webgl_canvas_colormap_boy">
-                		<canvas id="webgl_colormap_boy" height="400" width="400">
-                		    Please use a browser that supports "canvas"
-														
-                		</canvas>
-							  </div>
-								
-								<p>
-											In this colormap the 
-								</p>
-
-								<h3> Mirror Symmetry Colormap </h3>
-								<div id="div_webgl_canvas_colormap_mirror">
-                		<canvas id="webgl_colormap_mirror" height="400" width="400">
-                		    Please use a browser that supports "canvas"
-														
-                		</canvas>
-							  </div>
-								
-								<p>
-											In this colormap the 
-								</p>
-
-								<h3> No Simmetry Colormap </h3>
-								<div id="div_webgl_canvas_colormap_no_sym">
-                		<canvas id="webgl_colormap_no_sym" height="400" width="400">
-                		    Please use a browser that supports "canvas"
-														
-                		</canvas>
-							  </div>
-								
-								<p>
-											In this colormap the 
-								</p>
-
-							<h3> Rotational Simmetry Colormap </h3>
-								<div id="div_webgl_canvas_colormap_rot_sym">
-                		<canvas id="webgl_colormap_rot_sym" height="400" width="400">
-                		    Please use a browser that supports "canvas"
-														
-                		</canvas>
-							  </div>
-								
-								<p>
-											In this colormap the 
-								</p>
-
-							<h3> Raphael Colormap </h3>
-								<div id="div_webgl_canvas_colormap_raph">
-                		<canvas id="webgl_colormap_raph" height="400" width="400">
-                		    Please use a browser that supports "canvas"
-														
-                		</canvas>
-							  </div>
-								
-								<p>
-											In this colormap the 
-								</p>						
-
-														
-
-								
-												<link rel="stylesheet" type="text/css" href="css/colormap.css"/>
                         <script src="js/superquadric/webgl-utils.js"></script>
                         <script src="js/superquadric/webgl-debug.js"></script>
                         <script src="js/superquadric/cuon-utils.js"></script>
@@ -598,9 +517,8 @@
 							<!-- Tractography css files -->
 							<link rel="stylesheet" type="text/css" href="css/tractography.css" />
 
-		
-							<div id='threeD_fullbrain_container'> 
-								<div id="threeD_fullbrain_visual" style="width: 100%; height: 100%; max-height: 95%;"></div>
+							<div id='threeD_tractography_container'>
+								<div id="threeD_tractography_visual" style="width: 100%; height: 100%; max-height: 95%;"></div>
 							</div>
 
 							<p>
@@ -608,11 +526,7 @@
 									in a mathematical representation of the majority of fibers in a human brain.
 							</p>
 
-							<div id='threeD_big_fibers_container'> 
-								<div id="threeD_big_fibers_visual" style="width: 40%; height: 80%; max-height: 95%;"></div>
-							</div>
 
-						
 							<p class="related">
 
 								Further references
