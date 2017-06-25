@@ -1,10 +1,22 @@
 window.onload = function() {
     
-		var colormap_a = new Colormap('webgl_colormap_a', 1);
+		var colormap_a = new Colormap('webgl_colormap_abs', 1);
     colormap_a.create();
 		
-		var colormap_b = new Colormap('webgl_colormap_b', 3);
+		var colormap_b = new Colormap('webgl_colormap_boy', 2);
     colormap_b.create();
+		
+		var colormap_c = new Colormap('webgl_colormap_mirror', 3);
+    colormap_c.create();
+
+		var colormap_d = new Colormap('webgl_colormap_no_sym', 4);
+    colormap_d.create();
+
+		var colormap_e = new Colormap('webgl_colormap_rot_sym', 5);
+    colormap_e.create();
+
+		var colormap_f = new Colormap('webgl_colormap_raph', 6);
+    colormap_f.create();
 
     var superquadric = new Superquadric();
     superquadric.create();
