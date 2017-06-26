@@ -47,7 +47,7 @@
 					<div class="handle">
 						<div class="slide" data-content="content-1">
 							<div class="img-wrap"><img src="img/concept.jpg" alt="img1"/></div>
-							<h2>Concepts<span>Theory and principles behind brain scanning</span></h2>
+							<h2>Concepts<span>Theory and principles behind diffusion</span></h2>
 							<button class="content-switch">Read more</button>
 						</div>
 						<div class="slide" data-content="content-2">
@@ -62,7 +62,7 @@
 						</div>
 						<div class="slide" data-content="content-4">
 							<div class="img-wrap"><img src="img/fa.png" alt="img4"/></div>
-							<h2>Scalar Indexes<span>Representing Data in a Visual Manner</span></h2>
+							<h2>Scalar Indexes<span>Representing Data in a Visual Way</span></h2>
 							<button class="content-switch">Read more</button>
 						</div>
 						<div class="slide" data-content="content-5">
@@ -85,15 +85,21 @@
 				<!-- Content section -->
 				<section class="pages">
 					<div class="content" data-content="content-1">
-						<h2>Concepts <span>Theory and principles behind brain scanning</span></h2>
-						<p> The main idea ...</p>
+						<h2>Concepts <span>Theory and principles behind diffusion</span></h2>
+						<p> Diffusion is a complex motion of molecules, you can see below a simulation showing the difference between diffusion of molecules inside a restricted environment, on the left, and a non-restricted diffusion, on the right.</p>
 
 							<iframe src="html/ellipse_html.html" width="950" height="400" scrolling="no" style="border: none"></iframe>
 
+							<p>Particles or molecules in a fluid (liquid or gas) collide randomly with one another and with other molecules, a phenomenon called Brownian motion and their movement can be influenced by the temperature, environment structure, density of molecules, among others. The geometrical properties of the environment determine the rate and orientation of diffusion, when no boundaries restrict water movement, the diffusion is the same in all directions of space and is called isotropic. On the other hand, in a tight path, as an example, the diffusion will be greater in the unobstructed orientation, referred as anisotropic.</p>
+
+							<p>The diffusion can be represented mathematically by a tensor, wich can be expressed as a 3x3 matrix. Ultimately, a diffusion ellipsoid is modeled, with possibly different semiaxes lengths given by the matrix's eigenvalues, the eigenvectors are orthogonal and represent the directions of the ellipsoid's axes [1]. The ellipsoids in the animation represent the diffusion ellipsoid of the molecules in each case.</p>
+
+							<p>In human tissues, cell membranes, large protein molecules and fibers limit the motion of water molecules. Therefore measuring diffusion directionality can reveal information about the tissues' path and connections [2].</p>
+
 						<p class="related">
-							Further references <a href="https://en.wikipedia.org/wiki/Diffusion_MRI">[1] Website</a>
-<a href="Concepts and Theory ... ">[2] Article</a>
-<a href="On theory and principles ...">[3] Book</a>
+							Further references
+							<a href="http://onlinelibrary.wiley.com/doi/10.1002/cmr.a.20048/full">[1] KINDSLEY, 2006</a>
+							<a href="https://link.springer.com/content/pdf/10.1007/3-540-31272-2.pdf#page=127">[2] VILANOVA, 2006</a>
 						</p>
 					</div>
 					<div class="content" data-content="content-2">
@@ -208,7 +214,7 @@
 						</p>
 					</div>
 					<div class="content" data-content="content-3">
-						<h2>Conversion DTI to DWI <span>How to obtain diffusion characteristics</span></h2>
+						<h2>Conversion DWI to DTI <span>How to obtain diffusion characteristics</span></h2>
 
                         <p> From the diffusion-weighted signals, information about the diffusivity of the water molecules in
 							the tissues can be obtained after the application of a processing on the generated signals. This
@@ -303,9 +309,25 @@
 
 						<p>
 
-							Scalar indexes are many ways of representing color tables, below a visual representations of MD Scalar Index.
+							Scalar indexes are values that encapsulate the computed eigenvectors and eigenvalues from DTI (as discussed on previous section) in a single index. The goal is generate a speedy interpretation of the diffusion characteristics on rendered images. Many approaches have been proposed in [1]. Two main approaches [2], based on eigenvalues, are presented next, both represent the magnitude of the diffusion.
 
 						</p>
+
+
+						<h4> Mean Diffusivity (MD) </h4>
+
+						<p>
+								As the name implies, Mean Diffusivity (MD) is computed by the mean of the three eigenvalues, that is,
+						</p>
+
+						<figure>
+                <img src="img/scalar_indices/md.png"width="16%"/>
+            </figure>
+
+						<p>
+								The result volume can be observed next.
+						</p>
+
 
 						<script type="text/javascript" src="js/multiplanar.js"></script>
 						<link rel="stylesheet" type="text/css" href="css/multiplanar.css"/>
@@ -316,22 +338,42 @@
 								<div id="scalar_webgl_sliders_md" ">
                                 <div>
                                     <br/>
-                                    <font color="red">Sagittal:</font> <input id="md_x_slice_index" type ="range" step ="1" max="200" min ="0" />
+                                    <font color="red">Sagittal:</font> <input id="md_x_slice_index" type ="range" step ="1" max="250" min ="0" />
 
                                     <br/>
-                                    <font color="green">Coronal:</font> <input id="md_y_slice_index" type ="range" step ="1" max="200" min ="0" />
+                                    <font color="green">Coronal: </font> <input id="md_y_slice_index" type ="range" step ="1" max="250" min ="0" />
 
                                     <br/>
-                                    <font color="blue">Axial:</font> <input id="md_z_slice_index" type ="range" step ="1" max="100" min ="0" />
+                                    <font color="blue">Axial:  </font> <input id="md_z_slice_index" type ="range" step ="1" max="105" min ="0" />
                                 </div>
                 </div>
 						</div>
 
+						<h4> Functional Anisotropy (FA) </h4>
+
 						<p>
-
-							Below FA Scalar indexes is demonstraded in a multiplanar view
-
+								FA is a normalized measure of the fraction of the tensor's magnitude due to anisotropic diffusion [2], it is normalized in the range [0,1],
+								where 0 indicates a isotropic diffusion tensor and 1 an anisotropic one, it does not contain any information about the orientation.
+								The FA index can be computed by the following equation:
 						</p>
+
+						<figure>
+                <img src="img/scalar_indices/fa.png" width="40%"/>
+            </figure>
+
+						<p>
+								where
+						</p>
+
+						<figure>
+                <img src="img/scalar_indices/mean.jpg" />
+            </figure>
+
+						<p>
+								The result volume can be observed next.
+						</p>
+
+
 
 						<div id="scalar_index_container_fa">
 								<div id="scalar_index_multiplanar_fa" style="width: 40%; height: 400px "></div>
@@ -339,39 +381,126 @@
 								<div id="scalar_webgl_sliders_fa" ">
                                 <div>
                                     <br/>
-                                    <font color="red">Sagittal:</font> <input id="fa_x_slice_index" type ="range" step ="1" max="200" min ="0" />
+                                    <font color="red">Sagittal:</font> <input id="fa_x_slice_index" type ="range" step ="1" max="250" min ="0" />
 
                                     <br/>
-                                    <font color="green">Coronal:</font> <input id="fa_y_slice_index" type ="range" step ="1" max="200" min ="0" />
+                                    <font color="green">Coronal: </font> <input id="fa_y_slice_index" type ="range" step ="1" max="250" min ="0" />
 
                                     <br/>
-                                    <font color="blue">Axial:</font> <input id="fa_z_slice_index" type ="range" step ="1" max="100" min ="0" />
+                                    <font color="blue">Axial:  </font> <input id="fa_z_slice_index" type ="range" step ="1" max="105" min ="0" />
                                 </div>
                 </div>
 						</div>
 
+						<p>
+								The scalar index presented above are represented in gray scale, therefore, on the volumes, brighter areas represent higher anisotropic
+								 diffusion and darker areas represent isotropic regions.
+						</p>
 
-
-
+						<p>
+								These indexes do not contain any information regarding orientation, therefore a colormap can be employed to add more information
+								over the volume. More about scalar indexes can be found on the references. Colormaps are discussed on the next section.
+						</p>
 
 
 
 						<p class="related">
 					Further references
-<a href="https://en.wikipedia.org/wiki/Diffusion_MRI">[1] Website</a>
-<a href="Concepts and Theory ... ">[2] Article</a>
-<a href="On theory and principles ...">[3] Book</a>
+						<a href="http://dx.doi.org/10.1007/3-540-31272-2_7" target="_blank"> [1] VILANOVA et. al, (2006)</a>
+						<a href="http://www.frontiersin.org/brain_imaging_methods/10.3389/fnins.2013.00031/abstract">[2] SOARES et al., (2013)</a>
+
 						</p>
 					</div>
 					<div class="content" data-content="content-5">
 						<h2>Colormaps <span>What are they and what's the utility?</span></h2>
 
-						<div id="div_webgl_canvas_colormap">
-                            <canvas id="webgl_colormap" width="400" height="400">
-                                Please use a browser that supports "canvas"
-                            </canvas>
-                        </div>
+								<p>
+									Colormap is, as the name suggest, a map between a variable and a color. In a 3D spatial context, the color is used to indicate a specific spatial direction,
+								 that is, a 3D spatial vector direction will be translated in a specific color. To find a correlation that bring value to the desired spatial visualization is
+									a challenging task to designers and final users, because different choices may enhance different aspects. Below we propose a series of visual representations
+									of different colormaps, each one is rendered in a sphere where the normal vector of a point in the surface represent the spatial direction considered on the map.
+								</p>
 
+								<h3> Absolute value Colormap </h3>
+								<div id="div_webgl_canvas_colormap_abs">
+                		<canvas id="webgl_colormap_abs" height="400" width="400">
+                		    Please use a browser that supports "canvas"
+
+                		</canvas>
+							  </div>
+
+								<p>
+											In this colormap the absolute value of the three component of the 3D Spatial vector (x,y,z) is translated into RGB colors.
+								</p>
+										<figure>
+                      <img src="img/colormaps/absolute_value.jpg" />
+<!--                      <figcaption> Aboslute value </figcaption>-->
+                    </figure>
+
+								<h3> Boy Surface Colormap </h3>
+								<div id="div_webgl_canvas_colormap_boy">
+                		<canvas id="webgl_colormap_boy" height="400" width="400">
+                		    Please use a browser that supports "canvas"
+
+                		</canvas>
+							  </div>
+
+								<p>
+											In this colormap the
+								</p>
+
+								<h3> Mirror Symmetry Colormap </h3>
+								<div id="div_webgl_canvas_colormap_mirror">
+                		<canvas id="webgl_colormap_mirror" height="400" width="400">
+                		    Please use a browser that supports "canvas"
+
+                		</canvas>
+							  </div>
+
+								<p>
+											In this colormap the
+								</p>
+
+								<h3> No Simmetry Colormap </h3>
+								<div id="div_webgl_canvas_colormap_no_sym">
+                		<canvas id="webgl_colormap_no_sym" height="400" width="400">
+                		    Please use a browser that supports "canvas"
+
+                		</canvas>
+							  </div>
+
+								<p>
+											In this colormap the
+								</p>
+
+							<h3> Rotational Simmetry Colormap </h3>
+								<div id="div_webgl_canvas_colormap_rot_sym">
+                		<canvas id="webgl_colormap_rot_sym" height="400" width="400">
+                		    Please use a browser that supports "canvas"
+
+                		</canvas>
+							  </div>
+
+								<p>
+											In this colormap the
+								</p>
+
+							<h3> Raphael Colormap </h3>
+								<div id="div_webgl_canvas_colormap_raph">
+                		<canvas id="webgl_colormap_raph" height="400" width="400">
+                		    Please use a browser that supports "canvas"
+
+                		</canvas>
+							  </div>
+
+								<p>
+											In this colormap the
+								</p>
+
+
+
+
+												<link rel="stylesheet" type="text/css" href="css/colormap.css"/>
                         <script src="js/superquadric/webgl-utils.js"></script>
                         <script src="js/superquadric/webgl-debug.js"></script>
                         <script src="js/superquadric/cuon-utils.js"></script>
@@ -527,7 +656,7 @@
 						<h2>Tractography <span>Visualizing Brain Fibers</span></h2>
 
 							<p>
-									Tractography is a visual representations of brain white matter fiber anatomy, as such, explore the next visualization to observe some neural connections.
+									Tractography is a visual representations of brain white matter fiber anatomy, as such, explore the next visualization to observe some neural connections before anything else.
 							</p>
 
 							<!-- Tractography render script -->
@@ -535,14 +664,21 @@
 							<!-- Tractography css files -->
 							<link rel="stylesheet" type="text/css" href="css/tractography.css" />
 
-							<div id='threeD_tractography_container'>
-								<div id="threeD_tractography_visual" style="width: 100%; height: 100%; max-height: 95%;"></div>
+
+							<div id='threeD_fullbrain_container'>
+								<div id="threeD_fullbrain_visual" style="width: 100%; height: 100%; max-height: 95%;"></div>
 							</div>
 
 							<p>
 									Estimating those fibers is the final result of a great many number of transformations, as explained in the previous sections, which cumulated
 									in a mathematical representation of the majority of fibers in a human brain.
 							</p>
+
+							<div id='threeD_big_fibers_container'>
+								<div id="threeD_big_fibers_visual" style="width: 40%; height: 80%; max-height: 95%;"></div>
+							</div>
+
+
 
 
 							<p class="related">
