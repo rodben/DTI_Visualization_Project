@@ -2,7 +2,7 @@ var container = document.getElementById("ellipse_placement");
 
 // Get window size and set renderer size
 var width = window.innerWidth;
-var height = window.innerHeight/2;
+var height = window.innerHeight;
 var renderer = new THREE.WebGLRenderer({canvas: container, antialias: true });
 renderer.setSize(width, height);
 
@@ -11,14 +11,7 @@ window.addEventListener( 'resize', onWindowResize, false );
 
 var scene = new THREE.Scene;
 scene.background = new THREE.Color( 0xdfe3e3 );
-// // // Draws cube just to test
-// var cubeGeometry = new THREE.CubeGeometry(100, 100, 100);
-// var cubeMaterial = new THREE.MeshLambertMaterial({ color: 0x1ec876 });
-// var cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
-// cube.rotation.y = Math.PI * 45 / 180;
-// cube.position.x = 100;
-// cube.position.y = -100;
-// // // scene.add(cube);
+
 
 // It's not an ellipsoid yet, but it will be
 var EllipseGeometry = new THREE.SphereGeometry( 10, 100, 100 );
@@ -87,22 +80,6 @@ camera.position.y = 0;
 camera.position.z = 1000;
 scene.add(camera);
 
-// Code for drag controls
-// controls = new THREE.TrackballControls( camera );
-// 				controls.rotateSpeed = 1.0;
-// 				controls.zoomSpeed = 1.2;
-// 				controls.panSpeed = 0.8;
-// 				controls.noZoom = false;
-// 				controls.noPan = false;
-// 				controls.staticMoving = true;
-// 				controls.dynamicDampingFactor = 0.3;
-
-// Skybox background
-// var skyboxGeometry = new THREE.CubeGeometry(100000, 100000, 100000);
-// var skyboxMaterial = new THREE.MeshBasicMaterial({ color: 0xdfe3e3, side: THREE.BackSide });
-// var skybox = new THREE.Mesh(skyboxGeometry, skyboxMaterial);
-// scene.add(skybox);
-
 // Light
 var pointLight = new THREE.PointLight(0xffffff);
 var zpos = 5000;
@@ -110,12 +87,6 @@ pointLight.position.set(0, 0, zpos);
 scene.add(pointLight);
 
 var clock = new THREE.Clock;
-
-// var cubes = [];
-// cubes.push(cube);
-// var dragControls = new THREE.DragControls( cubes, camera, renderer.domElement );
-// dragControls.addEventListener( 'dragstart', function ( event ) { controls.enabled = false; } );
-// dragControls.addEventListener( 'dragend', function ( event ) { controls.enabled = true; } );
 
 var count = 0; // Counts the time passed
 var AniToGoX=[], AniToGoY=[], AniInitX=[], AniInitY=[];
@@ -255,7 +226,7 @@ function RestartAnimation(){
 
 function onWindowResize(){
   width = window.innerWidth;
-  height = window.innerHeight/2;
+  height = window.innerHeight;
   camera.aspect = width/height;
   camera.updateProjectionMatrix();
   renderer.setSize( width, height );
