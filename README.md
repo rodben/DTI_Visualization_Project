@@ -41,10 +41,10 @@ Add concept visualization to Conversion DWI to DTI section.
 
 ## Developers/Contact
 
-Raphael Voltoline - raphavoltoline.rvr@gmail.com
-Rodolfo Luis Tonoli - rltonoli@gmail.com
-Rodrigo Benites - rbenites@dca.fee.unicamp.br
-William Javier Garcia Herrera - wilomaku@gmail.com
+Raphael Voltoline - raphavoltoline.rvr@gmail.com 
+Rodolfo Luis Tonoli - rltonoli@gmail.com  
+Rodrigo Benites - rbenites@dca.fee.unicamp.br  
+William Javier Garcia Herrera - wilomaku@gmail.com  
 
 ## License
 
