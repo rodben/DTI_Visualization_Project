@@ -2,7 +2,6 @@ Figure References
 Concept  - https://wallpaperscraft.com/image/black_formula_board_79691_2560x1600.jpg
 Fa - http://www.vavlab.ee.boun.edu.tr/research/BRAINet/images/BRAINetc_FA.png
 Dti - https://usa.healthcare.siemens.com/siemens_hwem-hwem_ssxa_websites-context-root/no-static/wcm/idc/resources/hwem_assets/mri/htmlApps/neuro20151127/assets/img/content/03_gobrain/drag-n-dop/drag-n-drop-01.jpg
-Dicom - http://www.contentcaptureservices.co.uk/wp-content/uploads/2016/10/Dicom.png
 Colormap - https://i.stack.imgur.com/1YopV.png
 Glyphs - https://upload.wikimedia.org/wikipedia/en/b/b7/DiffusionMRI_glyphs.png
 Tratos - http://i1.wp.com/sitn.hms.harvard.edu/wp-content/uploads/2016/08/b7500_Connectome_ISN017_tube.png

@@ -8,11 +8,15 @@
     padding: 0;
 		display:flex;
     justify-content:center;
+		height: 400px;
+		max-height: 400px;
 }
 
 #scalar_index_multiplanar_fa {
-    width: 30%;
+    width: 40%;
 		background-color: #000;
+		max-height: 400px;
+		height: 400px;
 }
 
 #scalar_webgl_sliders_fa {
@@ -29,10 +33,11 @@
     padding: 0;
 		display:flex;
     justify-content:center;
+		height: 400px;
 }
 
 #scalar_index_multiplanar_md {
-    width: 30%;
+    width: 40%;
 		background-color: #000;
 }
 
