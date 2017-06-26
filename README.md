@@ -48,6 +48,8 @@ William Javier Garcia Herrera - wilomaku@gmail.com
 
 ## License
 
+Licensed under the Open Software License version 3.0.
+
 This website is developed under the template available on
 [Template](http://tympanus.net/Development/DraggableDualViewSlideshow/)
 
