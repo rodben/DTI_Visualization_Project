@@ -94,7 +94,7 @@
 
 							<p>The diffusion can be represented mathematically by a tensor, wich can be expressed as a 3x3 matrix. Ultimately, a diffusion ellipsoid is modeled, with possibly different semiaxes lengths given by the matrix's eigenvalues, the eigenvectors are orthogonal and represent the directions of the ellipsoid's axes [1]. The ellipsoids in the animation represent the diffusion ellipsoid of the molecules in each case.</p>
 
-							<p>In human tissues, cell mambranes, large protein molecules and fibers limit the motion of water molecules. Therefore measuring diffusion directionallity can reveal information about the tissues' path and connections [2].</p>
+							<p>In human tissues, cell membranes, large protein molecules and fibers limit the motion of water molecules. Therefore measuring diffusion directionality can reveal information about the tissues' path and connections [2].</p>
 
 						<p class="related">
 							Further references
@@ -291,17 +291,17 @@
 
 						<p>
 
-							Scalar indexes are values that encapsulate the computed eigenvectors and eigenvalues from DTI (as discussed on previous section) in a single index. The goal is generate a speedy interpretation of the diffusion characteristics on rendered images. Many approaches have been proposed in [1]. Two main approaches [2], based on eigenvalues, are presented next, both represent the magnitude of the diffusion. 
+							Scalar indexes are values that encapsulate the computed eigenvectors and eigenvalues from DTI (as discussed on previous section) in a single index. The goal is generate a speedy interpretation of the diffusion characteristics on rendered images. Many approaches have been proposed in [1]. Two main approaches [2], based on eigenvalues, are presented next, both represent the magnitude of the diffusion.
 
 						</p>
 
 
-						<h4> Mean Diffusivity (MD) </h4>	
+						<h4> Mean Diffusivity (MD) </h4>
 
 						<p>
 								As the name implies, Mean Diffusivity (MD) is computed by the mean of the three eigenvalues, that is,
 						</p>
-						
+
 						<figure>
                 <img src="img/scalar_indices/md.png"width="16%"/>
             </figure>
@@ -310,7 +310,7 @@
 								The result volume can be observed next.
 						</p>
 
-						
+
 						<script type="text/javascript" src="js/multiplanar.js"></script>
 						<link rel="stylesheet" type="text/css" href="css/multiplanar.css"/>
 
@@ -331,18 +331,18 @@
                 </div>
 						</div>
 
-						<h4> Functional Anisotropy (FA) </h4>	
+						<h4> Functional Anisotropy (FA) </h4>
 
 						<p>
-								FA is a normalized measure of the fraction of the tensor's magnitude due to anisotropic diffusion [2], it is normalized in the range [0,1], 
-								where 0 indicates a isotropic diffusion tensor and 1 an anisotropic one, it does not contain any information about the orientation. 
+								FA is a normalized measure of the fraction of the tensor's magnitude due to anisotropic diffusion [2], it is normalized in the range [0,1],
+								where 0 indicates a isotropic diffusion tensor and 1 an anisotropic one, it does not contain any information about the orientation.
 								The FA index can be computed by the following equation:
 						</p>
 
 						<figure>
                 <img src="img/scalar_indices/fa.png" width="40%"/>
             </figure>
-						
+
 						<p>
 								where
 						</p>
@@ -355,7 +355,7 @@
 								The result volume can be observed next.
 						</p>
 
-						
+
 
 						<div id="scalar_index_container_fa">
 								<div id="scalar_index_multiplanar_fa" style="width: 40%; height: 400px "></div>
@@ -380,7 +380,7 @@
 						</p>
 
 						<p>
-								These indexes do not contain any information regarding orientation, therefore a colormap can be employed to add more information 
+								These indexes do not contain any information regarding orientation, therefore a colormap can be employed to add more information
 								over the volume. More about scalar indexes can be found on the references. Colormaps are discussed on the next section.
 						</p>
 
@@ -398,21 +398,21 @@
 
 								<p>
 									Colormap is, as the name suggest, a map between a variable and a color. In a 3D spatial context, the color is used to indicate a specific spatial direction,
-								 that is, a 3D spatial vector direction will be translated in a specific color. To find a correlation that bring value to the desired spatial visualization is 
-									a challenging task to designers and final users, because different choices may enhance different aspects. Below we propose a series of visual representations 
+								 that is, a 3D spatial vector direction will be translated in a specific color. To find a correlation that bring value to the desired spatial visualization is
+									a challenging task to designers and final users, because different choices may enhance different aspects. Below we propose a series of visual representations
 									of different colormaps, each one is rendered in a sphere where the normal vector of a point in the surface represent the spatial direction considered on the map.
-								</p>	
-		
+								</p>
+
 								<h3> Absolute value Colormap </h3>
 								<div id="div_webgl_canvas_colormap_abs">
                 		<canvas id="webgl_colormap_abs" height="400" width="400">
                 		    Please use a browser that supports "canvas"
-														
+
                 		</canvas>
 							  </div>
-								
+
 								<p>
-											In this colormap the absolute value of the three component of the 3D Spatial vector (x,y,z) is translated into RGB colors. 
+											In this colormap the absolute value of the three component of the 3D Spatial vector (x,y,z) is translated into RGB colors.
 								</p>
 										<figure>
                       <img src="img/colormaps/absolute_value.jpg" />
@@ -423,65 +423,65 @@
 								<div id="div_webgl_canvas_colormap_boy">
                 		<canvas id="webgl_colormap_boy" height="400" width="400">
                 		    Please use a browser that supports "canvas"
-														
+
                 		</canvas>
 							  </div>
-								
+
 								<p>
-											In this colormap the 
+											In this colormap the
 								</p>
 
 								<h3> Mirror Symmetry Colormap </h3>
 								<div id="div_webgl_canvas_colormap_mirror">
                 		<canvas id="webgl_colormap_mirror" height="400" width="400">
                 		    Please use a browser that supports "canvas"
-														
+
                 		</canvas>
 							  </div>
-								
+
 								<p>
-											In this colormap the 
+											In this colormap the
 								</p>
 
 								<h3> No Simmetry Colormap </h3>
 								<div id="div_webgl_canvas_colormap_no_sym">
                 		<canvas id="webgl_colormap_no_sym" height="400" width="400">
                 		    Please use a browser that supports "canvas"
-														
+
                 		</canvas>
 							  </div>
-								
+
 								<p>
-											In this colormap the 
+											In this colormap the
 								</p>
 
 							<h3> Rotational Simmetry Colormap </h3>
 								<div id="div_webgl_canvas_colormap_rot_sym">
                 		<canvas id="webgl_colormap_rot_sym" height="400" width="400">
                 		    Please use a browser that supports "canvas"
-														
+
                 		</canvas>
 							  </div>
-								
+
 								<p>
-											In this colormap the 
+											In this colormap the
 								</p>
 
 							<h3> Raphael Colormap </h3>
 								<div id="div_webgl_canvas_colormap_raph">
                 		<canvas id="webgl_colormap_raph" height="400" width="400">
                 		    Please use a browser that supports "canvas"
-														
+
                 		</canvas>
 							  </div>
-								
+
 								<p>
-											In this colormap the 
-								</p>						
+											In this colormap the
+								</p>
 
-														
 
-								
+
+
 												<link rel="stylesheet" type="text/css" href="css/colormap.css"/>
                         <script src="js/superquadric/webgl-utils.js"></script>
                         <script src="js/superquadric/webgl-debug.js"></script>
@@ -647,7 +647,7 @@
 							<link rel="stylesheet" type="text/css" href="css/tractography.css" />
 
 
-							<div id='threeD_fullbrain_container'> 
+							<div id='threeD_fullbrain_container'>
 								<div id="threeD_fullbrain_visual" style="width: 100%; height: 100%; max-height: 95%;"></div>
 							</div>
 
@@ -656,13 +656,13 @@
 									in a mathematical representation of the majority of fibers in a human brain.
 							</p>
 
-							<div id='threeD_big_fibers_container'> 
+							<div id='threeD_big_fibers_container'>
 								<div id="threeD_big_fibers_visual" style="width: 40%; height: 80%; max-height: 95%;"></div>
 							</div>
 
-		
 
-						
+
+
 							<p class="related">
 
 								Further references
