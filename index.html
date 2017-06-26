@@ -13,6 +13,7 @@
 		<link rel="stylesheet" type="text/css" href="css/demo.css" />
 		<link rel="stylesheet" type="text/css" href="css/dragdealer.css" />
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link rel="stylesheet" type="text/css" href="css/modal.css" />
 
   		<script type="text/javascript" src="js/modernizr.custom.js"></script>
 			<!-- XTK Visualization toolkit js files-->
@@ -25,9 +26,24 @@
 	</head>
 	<body>
 		<div class="container">
-			<!--<div class="codrops-top clearfix">
-				<span class="right"><a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=19332"><span>Project Details</span></a></span>
-			</div> -->
+			<div class="codrops-top clearfix">
+				<script>function OpenModal() {var modal = document.getElementById('myModal');modal.style.display = "block";window.onclick = function(event) {if (event.target == modal) {modal.style.display = "none";}}}</script>
+				<span class="right"><a id="myText" class="codrops-icon codrops-icon-drop" onclick="OpenModal();" style="cursor: pointer; cursor: hand;"><span>Project Details
+					<div id="myModal" class="modal">
+					<!-- Modal content -->
+  			<div class="modal-content">
+    			<p>This is the final project for the IA369 - Data Visualization course, offered on the first semester of 2017, by the Faculty of Electrical and Computing Engineering (FEEC) of University of Campinas (Unicamp). The course was delivered by Paula Paro Costa (website).</p>
+					<p>Developers/Contact</p>
+
+				<p>Raphael Voltoline - raphavoltoline.rvr@gmail.com</p>
+				<p>Rodrigo Benites - rbenites@dca.fee.unicamp.br</p>
+				<p>Rodolfo Luis Tonoli - rltonoli@gmail.com</p>
+				<p>William Javier Garcia Herrera - wilomaku@gmail.com</p>
+  			</div>
+			</div>
+
+				</span></a></span>
+			</div>
 			<header id="header" class="codrops-header">
 				<h1>IA369 Project</h1>
 				<span class="message">This mobile version does not have the slideshow switch</span>
@@ -105,7 +121,7 @@
 					<div class="content" data-content="content-2">
 						<h2>RAW Data <span>How to understand Brain microstructure</span></h2>
 
-						
+
 						<p>Diffusion Weighted Image (DWI) shows contrast based-on diffusion differences of water molecules  inside the brain.</p>
 
 			<figure id="my_dwi">
@@ -430,7 +446,7 @@
 
 								<p>
                                     In this colormap the absolute value of the three component of the 3D Spatial vector (x,y,z) is translated into RGB colors.
-                                    It is the most one used. Its color variation in orientation is smooth, but there is a serious problem with ambiguity 
+                                    It is the most one used. Its color variation in orientation is smooth, but there is a serious problem with ambiguity
                                     in spatial orientation, that is, more than one direction is mapped onto the same color.
 								</p>
 <!--
@@ -439,7 +455,7 @@
                                   <figcaption> Aboslute value </figcaption>
                                 </figure>
 -->
-                        
+
                                 <h3> No Simmetry Colormap </h3>
 								<div id="div_webgl_canvas_colormap_no_sym"  style="display:flex; justify-content:center;">
                                     <canvas id="webgl_colormap_no_sym" height="400" width="400"  style="margin: 0px;">
@@ -452,10 +468,10 @@
 
 								<p>
                                         This colormap does not suffer from ambiguity in orientation and its color sequence helps
-                                        the mental inversion. However, it gives rise to the color discontinuity artifacts. 
+                                        the mental inversion. However, it gives rise to the color discontinuity artifacts.
                                         This discontinuity can lead to misleading interpretations.
 								</p>
-                        
+
                                     <h3> Rotational Simmetry Colormap </h3>
                                     <div id="div_webgl_canvas_colormap_rot_sym" style="display:flex; justify-content:center;">
                                         <canvas id="webgl_colormap_rot_sym" height="400" width="400"  style="margin: 0px;">
@@ -470,7 +486,7 @@
                                         Rotational symmetry mapping was designed to map any vector and its inverse onto
                                         the same color. The ambiguity in orientation has been perceptually ameliorated, but not eliminated
                                     </p>
-                        
+
                                 <h3> Mirror Symmetry Colormap </h3>
 								<div id="div_webgl_canvas_colormap_mirror"  style="display:flex; justify-content:center;">
                                     <canvas id="webgl_colormap_mirror" height="400" width="400"  style="margin: 0px;">
@@ -483,7 +499,7 @@
 
 								<p>
                                     Mirror symmetry mapping was designed to map the same color code to a vector and its mirror
-                                    image with respect to the midsagittal plane. Although it can be helpful for highlighting 
+                                    image with respect to the midsagittal plane. Although it can be helpful for highlighting
                                     differences between the left and right brain hemisphere, it presents problems of ambiguity
                                     in orientation, as well as of discontinuity.
 								</p>
@@ -693,8 +709,8 @@
 
 							<p>
 									The estimation of a fiber tract is based on the Tensor information, so to construct a single fiber, it’s necessary to start from a predefined voxel (seed)
-									 and start connecting adjacent voxels in a manner that represent the fiber trajectory. A deterministic [1] or probabilistic [2] approach may be used to 
-										select the next voxel to be added. 
+									 and start connecting adjacent voxels in a manner that represent the fiber trajectory. A deterministic [1] or probabilistic [2] approach may be used to
+										select the next voxel to be added.
 							</p>
 
 							<p>
@@ -714,11 +730,11 @@
 						</p>
 
 						<p>
-								The visualization below is an extraction from the above, but only fibers bigger than 70mm in length are displayed. 
+								The visualization below is an extraction from the above, but only fibers bigger than 70mm in length are displayed.
 								It’s easier to observe the connections from both hemispheres and the extent of some lateral fibers.
 						</p>
-						
-							<div id='threeD_big_fibers_container'> 
+
+							<div id='threeD_big_fibers_container'>
 								<div id="threeD_big_fibers_visual" style="width: 60%; height: 80%; max-height: 95%;"></div>
 							</div>
 
