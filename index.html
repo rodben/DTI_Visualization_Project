@@ -317,7 +317,7 @@
 							<div id="scalar_index_container_md">
 								<div id="scalar_index_multiplanar_md" ></div>
 
-								<div id="scalar_webgl_sliders_md" ">
+								<div id="scalar_webgl_sliders_md">
                                 <div>
                                     <br/>
                                     <font color="red">Sagittal:</font> <input id="md_x_slice_index" type ="range" step ="1" max="250" min ="0" />
@@ -650,23 +650,47 @@
 							</div>
 
 							<p>
-									Estimating those fibers is the final result of a great many number of transformations, as explained in the previous sections, which cumulated
-									in a mathematical representation of the majority of fibers in a human brain.
+									The estimation of a fiber tract is based on the Tensor information, so to construct a single fiber, it’s necessary to start from a predefined voxel (seed)
+									 and start connecting adjacent voxels in a manner that represent the fiber trajectory. A deterministic [1] or probabilistic [2] approach may be used to 
+										select the next voxel to be added. 
 							</p>
 
-							<div id='threeD_big_fibers_container'>
-								<div id="threeD_big_fibers_visual" style="width: 40%; height: 80%; max-height: 95%;"></div>
+							<p>
+									Those local approaches have limitations regarding decisions about termination criteria and ill defined regions, such as crossing, kissing, fanning and bending.
+									 The figure below exemplifies those cases [3], where tensor information cannot give accurate information.
+							</p>
+
+							<figure>
+                 <img src="img/tractography/problems.jpg" />
+                 <figcaption> Different fibers Orientations and respective Tensors </figcaption>
+             </figure>
+
+						<p>
+								An attempt to overcome those limitations are proposed in the global methods [4] [5], where instead of building fibers individually, all fibers are considered at
+								 same time and the solution that best fit the data is chosen. Those methods present more complexity and, therefore, are slower in comparison to local methods.
+								 Further considerations about tractography, such as limitations, visualization pipelines and evaluation can be found on [6], [7] and [8].
+						</p>
+
+						<p>
+								The visualization below is an extraction from the above, but only fibers bigger than 70mm in length are displayed. 
+								It’s easier to observe the connections from both hemispheres and the extent of some lateral fibers.
+						</p>
+						
+							<div id='threeD_big_fibers_container'> 
+								<div id="threeD_big_fibers_visual" style="width: 60%; height: 80%; max-height: 95%;"></div>
 							</div>
-
-
-
 
 							<p class="related">
 
 								Further references
-								<a href="https://en.wikipedia.org/wiki/Diffusion_MRI">[1] Website</a>
-								<a href="Concepts and Theory ... ">[2] Article</a>
-								<a href="On theory and principles ...">[3] Book</a>
+								<a href="http://www.vision.jhu.edu/reading_group/basser-2000-2000.pdf">[1] Basser et al., (2000) </a>
+								<a href="https://infoscience.epfl.ch/record/86983">[2] Hagman et al., (2003) </a>
+								<a href="https://doi.org/10.1089/brain.2011.0033">[3] Jbabdi and Johansen-Berg, (2011)</a>
+								<a href="http://www.sciencedirect.com/science/article/pii/S1053811910011973?via%3Dihub">[4] Reisert et al., (2011)</a>
+								<a href="http://dx.doi.org/10.1016/j.neuroimage.2013.04.009">[5] Mangin, et al., (2013)</a>
+								<a href="https://www.ncbi.nlm.nih.gov/pubmed/20299436">[6] Chung et al,. (2011) </a>
+								<a href="https://www.cs.uoregon.edu/Reports/DRP-201506-Kress.pdf">[7] Kress et al., (2015) </a>
+								<a href="https://www.researchgate.net/publication/236937908_Tractometer_Towards_validation_of_tractography_pipelines">[8] Cotê et al., (2013)</a>
 
 							</p>
 					</div>
