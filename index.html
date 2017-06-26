@@ -419,79 +419,106 @@
 								</p>
 
 								<h3> Absolute value Colormap </h3>
-								<div id="div_webgl_canvas_colormap_abs">
-                		<canvas id="webgl_colormap_abs" height="400" width="400">
-                		    Please use a browser that supports "canvas"
-
-                		</canvas>
-							  </div>
+								<div id="div_webgl_canvas_colormap_abs" style="display:flex; justify-content:center;">
+                                    <canvas id="webgl_colormap_abs" height="400" width="400" style="margin: 0px;">
+                                        Please use a browser that supports "canvas"
+                                    </canvas>
+                                    <figure>
+                                        <img height="100%" src="img/colormaps/dti_absolute_color_map.png" />
+                                    </figure>
+                                </div>
 
 								<p>
-											In this colormap the absolute value of the three component of the 3D Spatial vector (x,y,z) is translated into RGB colors.
+                                    In this colormap the absolute value of the three component of the 3D Spatial vector (x,y,z) is translated into RGB colors.
+                                    It is the most one used. Its color variation in orientation is smooth, but there is a serious problem with ambiguity 
+                                    in spatial orientation, that is, more than one direction is mapped onto the same color.
 								</p>
-										<figure>
-                      <img src="img/colormaps/absolute_value.jpg" />
-<!--                      <figcaption> Aboslute value </figcaption>-->
-                    </figure>
+<!--
+                                <figure>
+                                  <img src="img/colormaps/absolute_value.jpg" />
+                                  <figcaption> Aboslute value </figcaption>
+                                </figure>
+-->
+                        
+                                <h3> No Simmetry Colormap </h3>
+								<div id="div_webgl_canvas_colormap_no_sym"  style="display:flex; justify-content:center;">
+                                    <canvas id="webgl_colormap_no_sym" height="400" width="400"  style="margin: 0px;">
+                                        Please use a browser that supports "canvas"
+                                    </canvas>
+                                    <figure>
+                                        <img height="100%" src="img/colormaps/dti_no_symmetry_color_map.png" />
+                                    </figure>
+							     </div>
+
+								<p>
+                                        This colormap does not suffer from ambiguity in orientation and its color sequence helps
+                                        the mental inversion. However, it gives rise to the color discontinuity artifacts. 
+                                        This discontinuity can lead to misleading interpretations.
+								</p>
+                        
+                                    <h3> Rotational Simmetry Colormap </h3>
+                                    <div id="div_webgl_canvas_colormap_rot_sym" style="display:flex; justify-content:center;">
+                                        <canvas id="webgl_colormap_rot_sym" height="400" width="400"  style="margin: 0px;">
+                                            Please use a browser that supports "canvas"
+                                        </canvas>
+                                        <figure>
+                                            <img height="100%" src="img/colormaps/dti_rotational_symmetry_color_map.png" />
+                                        </figure>
+                                    </div>
+
+                                    <p>
+                                        Rotational symmetry mapping was designed to map any vector and its inverse onto
+                                        the same color. The ambiguity in orientation has been perceptually ameliorated, but not eliminated
+                                    </p>
+                        
+                                <h3> Mirror Symmetry Colormap </h3>
+								<div id="div_webgl_canvas_colormap_mirror"  style="display:flex; justify-content:center;">
+                                    <canvas id="webgl_colormap_mirror" height="400" width="400"  style="margin: 0px;">
+                                        Please use a browser that supports "canvas"
+                                    </canvas>
+                                    <figure>
+                                        <img height="100%" src="img/colormaps/dti_mirror_symmetry_color_map.png" />
+                                    </figure>
+							     </div>
+
+								<p>
+                                    Mirror symmetry mapping was designed to map the same color code to a vector and its mirror
+                                    image with respect to the midsagittal plane. Although it can be helpful for highlighting 
+                                    differences between the left and right brain hemisphere, it presents problems of ambiguity
+                                    in orientation, as well as of discontinuity.
+								</p>
 
 								<h3> Boy Surface Colormap </h3>
-								<div id="div_webgl_canvas_colormap_boy">
-                		<canvas id="webgl_colormap_boy" height="400" width="400">
-                		    Please use a browser that supports "canvas"
-
-                		</canvas>
-							  </div>
+								<div id="div_webgl_canvas_colormap_boy" style="display:flex; justify-content:center;">
+                                    <canvas id="webgl_colormap_boy" height="400" width="400"  style="margin: 0px;">
+                                        Please use a browser that supports "canvas"
+                                    </canvas>
+                                    <figure>
+                                        <img height="100%" src="img/colormaps/boy_surface.png" />
+                                    </figure>
+                                </div>
 
 								<p>
-											In this colormap the
+                                    The Boy’s Surface colormap is an approach more mathematically sophisticated to map the fiber
+                                    orientations onto color and to deal with the discontinuity problem. It is an almost unambiguously
+                                    smooth mapping. Nevertheless, its color sequence makes it difficult the inverse mapping.
 								</p>
 
-								<h3> Mirror Symmetry Colormap </h3>
-								<div id="div_webgl_canvas_colormap_mirror">
-                		<canvas id="webgl_colormap_mirror" height="400" width="400">
-                		    Please use a browser that supports "canvas"
-
-                		</canvas>
-							  </div>
-
-								<p>
-											In this colormap the
-								</p>
-
-								<h3> No Simmetry Colormap </h3>
-								<div id="div_webgl_canvas_colormap_no_sym">
-                		<canvas id="webgl_colormap_no_sym" height="400" width="400">
-                		    Please use a browser that supports "canvas"
-
-                		</canvas>
-							  </div>
+							     <h3> New Colormap proposed by [1] </h3>
+								<div id="div_webgl_canvas_colormap_raph" style="display:flex; justify-content:center;">
+                                    <canvas id="webgl_colormap_raph" height="400" width="400"  style="margin: 0px;">
+                                        Please use a browser that supports "canvas"
+                                    </canvas>
+                                    <figure>
+                                        <img height="100%" src="img/colormaps/dti_new_color_map.png" />
+                                    </figure>
+                                </div>
 
 								<p>
-											In this colormap the
-								</p>
-
-							<h3> Rotational Simmetry Colormap </h3>
-								<div id="div_webgl_canvas_colormap_rot_sym">
-                		<canvas id="webgl_colormap_rot_sym" height="400" width="400">
-                		    Please use a browser that supports "canvas"
-
-                		</canvas>
-							  </div>
-
-								<p>
-											In this colormap the
-								</p>
-
-							<h3> Raphael Colormap </h3>
-								<div id="div_webgl_canvas_colormap_raph">
-                		<canvas id="webgl_colormap_raph" height="400" width="400">
-                		    Please use a browser that supports "canvas"
-
-                		</canvas>
-							  </div>
-
-								<p>
-											In this colormap the
+								    It is a novel color scheme that does not have visual discontinuities and presents a relatively
+                                    unambiguous, smooth mapping between spatial orientations and colors, thus facilitating the interpretation
+                                    of DTI images. It relies on familiar color sequences and simple linear interpolation,
+                                    and can facilitate the study of subtle variations in diffusivity.
 								</p>
 
 
@@ -504,13 +531,11 @@
                         <script src="js/superquadric/cuon-matrix.js"></script>
                         <script src="js/colormap/colormap.js"></script>
 
-												<p class="related">
-					Further references
-<a href="https://en.wikipedia.org/wiki/Diffusion_MRI">[1] Website</a>
-<a href="Concepts and Theory ... ">[2] Article</a>
-<a href="On theory and principles ...">[3] Book</a>
-						</p>
-					</div>
+                                <p class="related">
+                                    Further references
+                                    <a href="https://doi.org/10.1016/j.cag.2016.08.006" target="_blank">[1] Shin-Ting Wu et al., 2016</a>
+                                </p>
+								</div>
 					<div class="content" data-content="content-6">
 						<h2>Glyphs<span>Visualizing Tensors in a Straightfoward Way</span></h2>
 
